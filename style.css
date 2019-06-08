@@ -1,3 +1,16 @@
+#laurentia {cursor: pointer;}
+#sewers {cursor: pointer;}
+#elysium {cursor: pointer;}
+#stygia {cursor: pointer;}
+#wyrm {cursor: pointer;}
+#terranullius {cursor: pointer;}
+#districtsButton {cursor: pointer;}
+#guildsButton {cursor: pointer;}
+#badgeButton {cursor: pointer;}
+#markerModeButton {cursor: pointer;}
+#mobileModeButton {cursor: pointer;}
+#backButton {cursor: pointer;}
+
 body
 {
 	cursor: crosshair;
