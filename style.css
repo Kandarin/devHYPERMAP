@@ -9,9 +9,9 @@ body
 }
 div.content
 {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -20,9 +20,10 @@ div.content
 }
 div.topbar
 {
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -95,7 +96,7 @@ div.toptitle
 	text-align: left;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 7pt;
-	
+
 }
 div.topupdatedate
 {
@@ -269,9 +270,9 @@ districts4{
 	z-index:4;
 }
 #tooltiptext{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -279,9 +280,9 @@ districts4{
 	display: inline-block;
 }
 #tooltipControls{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -289,9 +290,9 @@ districts4{
 	display: inline-block;
 }
 #tooltipControlsButtonCycle{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -304,9 +305,9 @@ cursor: pointer;
 	float: left;
 }
 #tooltipControlsButtonEnter{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -319,9 +320,9 @@ cursor: pointer;
 	float: left;
 }
 #tooltipControlsButtonCancel{
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -346,9 +347,9 @@ background-repeat: no-repeat;
 
 #overlay
 {
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -364,9 +365,9 @@ background-repeat: no-repeat;
 }
 #overlay2
 {
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -382,9 +383,9 @@ background-repeat: no-repeat;
 }
 #overlay3
 {
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -400,9 +401,9 @@ background-repeat: no-repeat;
 }
 #overlay4
 {
-	-moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -532,15 +533,15 @@ div.markerUIbuttonGreen
 	cursor: pointer;
 	display: none;
 }
-div.content 
+div.content
 {
 float:left;
 }
 
 #sidebar {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -554,9 +555,9 @@ float:left;
 	padding-left: 20px;
 }
 #sidebarMarkerlist {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -567,9 +568,9 @@ float:left;
 	padding-top: 20px;
 }
 #sidebarDestinationTypelist {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -579,9 +580,9 @@ float:left;
 	padding-top: 20px;
 }
 #pathfindingSettings {
--moz-user-select: none; 
-	-webkit-user-select: none; 
-	-ms-user-select: none; 
+-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -597,7 +598,7 @@ background-position:bottom left;
    border: 1px solid #00FF00;
    background-color: #003300;
  	border-radius: 3px;
-   color: white; 
+   color: white;
 }
 select.mpcost {
 background-repeat:no-repeat;
@@ -605,7 +606,7 @@ background-position:bottom left;
    border: 1px solid #00FFFF;
    background-color: #003333;
  	border-radius: 3px;
-   color: white; 
+   color: white;
 }
 
 
@@ -616,7 +617,7 @@ background-position:bottom left;
    border: 1px solid #00FF00;
    background-color: #003333;
  	border-radius: 3px;
-   color: white; 
+   color: white;
 }
 #customText {
 	background-color: #333333;

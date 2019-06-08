@@ -171,7 +171,7 @@ function setDestination(x,y,z) {
 
 function setDestinationType(type) {
 	if (type == "not_set") return;
-	type = type.replace(/\s+/, "").toLowerCase();
+	type = type.toLowerCase();
 	pathDestinationX = 0;
 	pathDestinationY = 0;
 	pathDestinationZ = 0;
@@ -241,9 +241,9 @@ function clearMarkers() {
 function pathCostModifier(index) {
 	var modifier = 1.0;
 	if (TileTypes[index] == "sea") modifier = waterCostModifier;
-	else if (TileTypes[index] == "river") modifier = waterCostModifier;
-	else if (TileTypes[index] == "searingriver") modifier = waterCostModifier;
-	else if (TileTypes[index] == "mountain") modifier = 2.0;
+	else if (TileTypes[index] == "river" || TileTypes[index] == "a river" ) modifier = waterCostModifier;
+	else if (TileTypes[index] == "searingriver" || TileTypes[index] == "searingriver") modifier = waterCostModifier;
+	else if (TileTypes[index] == "mountain" || TileTypes[index] == "mountain") modifier = 2.0;
 	
 	if (flightEnabled) modifier = 0.5;
     
@@ -252,7 +252,7 @@ function pathCostModifier(index) {
 
 function getSuccessorArray(index) {
 
-	var arr = decodeLocation(index);
+    var arr = decodeLocation(index);
 	var baseNeighbourNumber = 8;
 	
 	if (!validLocation(arr[0],arr[1],arr[2])) return [];
@@ -310,7 +310,7 @@ function getSuccessorArray(index) {
 	
 	resultCleaned = new Array(0);
 	for(var i = 0; i < baseNeighbourNumber+numberOfPortals; i++) {
-		if (result[i][0] < 20000-1) {
+		if (result[i][0] < 10000-1) {
 		resultCleaned.push(result[i]);
 		}
 	}
@@ -321,6 +321,7 @@ function getSuccessorArray(index) {
 
 function calculatePath() {
 
+    
 	var d = new Dijkstras();
         
 	var map = new Array(20000);
@@ -332,7 +333,7 @@ function calculatePath() {
 	
 	d.setGraph(map);
     
-var tempPath = d.getPath("" + encodeLocation(pathStartX,pathStartY,pathStartZ), "" + encodeLocation(pathDestinationX,pathDestinationY,pathDestinationZ));
+    var tempPath = d.getPath("" + encodeLocation(pathStartX,pathStartY,pathStartZ), "" + encodeLocation(pathDestinationX,pathDestinationY,pathDestinationZ));
 var path = [encodeLocation(pathStartX,pathStartY,pathStartZ)];
 for(var i = 0; i < tempPath.length; i++) {
 path.push(tempPath[i]);
@@ -383,7 +384,7 @@ showhideMarkersPlanechange();
 if(tempPath.length > 0)
 window.prompt("Copy path to clipboard with Ctrl+C, then press Enter", pathString);
 else
-alert("Destination could not be found");
+    alert("Destination could not be found");  
 	
 
 }
@@ -453,7 +454,6 @@ for(var i = 0; i < 20000; i++) {
 }
 
 function showPlane(planeIndex) {
-	
 
 	
 	Z = planeIndex;
@@ -813,11 +813,11 @@ function encodeLocation(x,y,z) {
 }
 
 function decodeLocation(val) { 
-	result = new Array(3);
+        result = new Array(3);
 //	result[3] = Math.floor(val/10000); // 0 = outside, 1 = inside, 2 = air
-	result[2] = Math.floor(val/2500);
-	result[1] = Math.floor((val-result[2]*2500)/50);
-	result[0] = Math.floor((val-result[1]*50)%50);
+        result[2] = Math.floor(val/2500);
+        result[1] = Math.floor((val-result[2]*2500)/50);
+        result[0] = Math.floor((val-result[1]*50)%50);
 	return result;
 }
 
@@ -886,7 +886,11 @@ function registerTileNames(x,y,z,name) {
 }
 
 function registerTileTypes(x,y,z,tiletype) {
-	TileTypes[encodeLocation(x,y,z)] = "" + tiletype;
+        ///////////////////////////////////////////////////////
+        // TileTypes[encodeLocation(x,y,z)] = "" + tiletype; // COMMENTED LINE INSERTED ORIGINAL
+        ///////////////////////////////////////////////////////
+
+        TileTypes[encodeLocation(x,y,z)] = "" + tiletype.toLowerCase();
 }
 
 function registerTileDescription(x,y,z,outside,inside) {
@@ -1276,12 +1280,15 @@ var Dijkstras = (function () {
         // Loop all nodes
         var u = null
 		
-		var iteration = 0;
+	var iteration = 0;
         while (u = this.queue.shift()) {	
 		iteration++;
 	
 		
             // Reached taget!
+            console.log("Queried tile destination type: " + TileTypes[parseInt(u)])
+            var arr = decodeLocation(u)
+            console.log("Target destination type: " + pathDestinationType)
             if ((u === target) || (TileTypes[parseInt(u)] == pathDestinationType)) {
                 var path = [];
                 while (this.previous[u] != null) {
@@ -1313,7 +1320,6 @@ var Dijkstras = (function () {
 			
 			
         }
-        
         return [];
         
     }
@@ -12332,14 +12338,14 @@ if (location.search) {
 	else if (startParam[2] == "Sewers") startZ = 3;
 	else if (startParam[2] == "Wyrm's Lair") startZ = 4;
         else if (startParam[2] == "Terra Nullius") startZ = 5;
-	
+            
 	var destZ = 0;
 	if (destParam[2] == "Elysium") destZ = 1;
 	else if (destParam[2] == "Stygia") destZ = 2;
 	else if (destParam[2] == "Sewers") destZ = 3;
 	else if (destParam[2] == "Wyrm's Lair") destZ = 4;
         else if (destParam[2] == "Terra Nullius") destZ = 5;
-		
+            	
 	toggleMarker(startParam[0],startParam[1],startZ);
 	toggleMarker(destParam[0],destParam[1],destZ);
 	showPlane(destZ);
