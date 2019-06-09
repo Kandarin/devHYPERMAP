@@ -29,6 +29,7 @@ div.topbar
 	/* display: inline-block; */
 	display: flex;
   flex-direction: row;
+	flex-wrap: wrap;
 	z-index: 15;
 	position:fixed;
 	width: 100%;
@@ -51,6 +52,7 @@ div.maplink
 	cursor: pointer;
 	height: 20;
 	flex: auto;
+	flex-wrap: wrap;
 	/* display: inline-block; */
 	text-align: center;
 	border-style: solid;
