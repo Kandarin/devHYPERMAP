@@ -28,7 +28,8 @@ div.topbar
 	unselectable: on;
 	z-index: 15;
 	position:fixed;
-	width: auto;
+	flex-wrap: wrap;
+	width: 100%;
 	min-width: 1500px;
 	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -48,6 +49,7 @@ div.maplink
 	cursor: pointer;
 	height: 20;
 	display: inline-block;
+	flex-wrap: wrap;
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
