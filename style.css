@@ -28,7 +28,7 @@ div.topbar
 	unselectable: on;
 	z-index: 15;
 	position:fixed;
-	width: 100%;
+	width: auto;
 	min-width: 1500px;
 	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
