@@ -1,7 +1,6 @@
 @media only screen and (max-width: 600px) {
 	div.topbar {
 		z-index: 15;
-		position:fixed;
 		width: 100%;
 		min-width: 1500px;
 		height: 35;
@@ -13,7 +12,6 @@
 	{
 		cursor: pointer;
 		height: 20;
-		display: inline-block;
 		text-align: center;
 		border-style: solid;
 		border-width: 1px;
