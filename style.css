@@ -1,10 +1,7 @@
 @media only screen and (max-width: 1000px) {
 	div.topbar {
-		display: -webkit-flex;
-    -webkit-flex-wrap: wrap;
-    display: flex;
-    flex-wrap: wrap;
-		position:relative;
+		cursor: pointer;
+		float: left;
 		z-index: 15;
 		width: auto;
 		min-width: 1500px;
