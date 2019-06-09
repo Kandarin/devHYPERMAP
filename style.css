@@ -26,8 +26,7 @@ div.topbar
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	display: flex;
-	flex-wrap: wrap;
+	display: inline-block;
 	z-index: 15;
 	position:fixed;
 	width: 100%;
@@ -49,8 +48,7 @@ div.maplink
 {
 	cursor: pointer;
 	height: 20;
-	display: flex;
-	flex-wrap: wrap;
+	display: inline-block;
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
