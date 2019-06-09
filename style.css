@@ -1,5 +1,6 @@
 @media only screen and (max-width: 1000px) {
 	div.topbar {
+		display:flex;
 		z-index: 15;
 		width: auto;
 		min-width: 1500px;
