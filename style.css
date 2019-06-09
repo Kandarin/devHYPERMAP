@@ -22,7 +22,7 @@ div.topbar
 {
 	-moz-user-select: none;
 	-webkit-user-select: none;
-	-webkit-flex: 1 1 auto;
+	-webkit-flex: 1 0 auto;
 	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
