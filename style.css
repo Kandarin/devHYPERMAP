@@ -3,7 +3,7 @@
 		display:flex;
 		position:fixed;
 		z-index: 15;
-		width: auto;
+		width: 100%;
 		min-width: 1500px;
 		height: 35;
 		font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -13,6 +13,7 @@
 	div.maplink
 	{
 		cursor: pointer;
+		display:flex;
 		height: 20;
 		text-align: center;
 		border-style: solid;
