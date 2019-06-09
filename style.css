@@ -22,13 +22,13 @@ div.topbar
 {
 	-moz-user-select: none;
 	-webkit-user-select: none;
+	-webkit-flex: 1 1 auto;
 	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
 	z-index: 15;
 	position:fixed;
-	display:flex;
 	flex-wrap: wrap;
 	width: 100%;
 	min-width: 1500px;
