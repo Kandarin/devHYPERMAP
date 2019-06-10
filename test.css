@@ -30,6 +30,9 @@ body
 	font-size: 18pt;
 	background-color: rgba(0,0,0,0.7);
 }
+.topbar>* {
+	flex: 1 1 160px;
+}
 .maplink
 {
 	cursor: pointer;
