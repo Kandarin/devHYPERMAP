@@ -23,7 +23,7 @@ body
 	-apple-flex-wrap: wrap;
 	flex-wrap: wrap;
 	position: fixed;
-	width: 100%;
+	width: auto;
 	min-width: 1500px;
 	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
