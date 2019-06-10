@@ -17,8 +17,11 @@ body
 	unselectable:on;
 	z-index: 15;
 	display: -apple-inline-flex;
+	display: inline-flex;
 	-apple-flex-direction: row;
+	flex-direction: row;
 	-apple-flex-wrap: wrap;
+	flex-wrap: wrap;
 	position: fixed;
 	width: 100%;
 	min-width: 1500px;
