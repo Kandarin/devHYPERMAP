@@ -1,4 +1,4 @@
-#body
+body
 {
 	cursor: crosshair;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -7,15 +7,16 @@
 	color: #FFFFFF;
 	background: #000000;
 }
-#topbar
+.topbar
 {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
 	-o-user-select: none;
-	unselectable: on;
+	unselectable:on;
 	z-index: 15;
+	display:inline-flex;
 	position:fixed;
 	width: 100%;
 	min-width: 1500px;
@@ -24,18 +25,25 @@
 	font-size: 18pt;
 	background-color: rgba(0,0,0,0.7);
 }
-#maplink
+.maplink
 {
 	cursor: pointer;
 	height: 20;
-	display: inline-block;
+	display: inline-flex;
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
-	border-radius: 3px;
+	border-radius: 4px;
 	padding-left: 5px;
 	padding-right: 5px;
 	vertical-align: middle;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10pt;
+	margin:3px;
 }
+.toptitle
+{
+	display: inline-block;
+	text-align: left;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
