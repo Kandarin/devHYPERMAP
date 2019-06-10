@@ -16,6 +16,8 @@ div.content
 	-o-user-select: none;
 	unselectable: on;
 	display: inline-block;
+	position: fixed;
+	top: auto;
 	min-height: 500px;
 }
 div.topbar
