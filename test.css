@@ -16,8 +16,8 @@ body
 	-o-user-select: none;
 	unselectable:on;
 	z-index: 15;
-	display: -webkit-inline-flex;
-	-webkit-flex-direction: row-reverse;
+	display: -apple-inline-flex;
+	-apple-flex-direction: row;
 	position: fixed;
 	width: 100%;
 	min-width: 1500px;
@@ -31,8 +31,6 @@ body
 	cursor: pointer;
 	height: 20;
 	display: -webkit-inline-flex;
-	-webkit-flex-direction: row;
-	float: left;
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
