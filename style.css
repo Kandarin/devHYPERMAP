@@ -16,6 +16,7 @@ div.content
 	-o-user-select: none;
 	unselectable: on;
 	display: inline-block;
+	position: absolute;
 	min-height: 500px;
 }
 div.topbar
@@ -532,11 +533,11 @@ div.markerUIbuttonGreen
 	cursor: pointer;
 	display: none;
 }
-div.content
+/*div.content
 {
 	height: 100%;
   float:left;
-}
+}*/
 
 #sidebar {
 -moz-user-select: none;
