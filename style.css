@@ -1,94 +1,3 @@
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (-webkit-min-device-pixel-ratio: 2) {
-	div.topbar
-	{
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		-o-user-select: none;
-		unselectable: on;
-		z-index: 15;
-		position:fixed;
-		width: auto;
-		min-width: 500px;
-		height: 35;
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 18pt;
-		background-color: rgba(0,0,0,0.7);
-	}
-	div.topspace
-	{
-		width: 100%;
-		height: 35;
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 18pt;
-	}
-
-	div.maplink
-	{
-		cursor: pointer;
-		height: 20;
-		display: inline-block;
-		text-align: center;
-		border-style: solid;
-		border-width: 1px;
-		border-radius: 3px;
-		padding-left: 5px;
-		padding-right: 5px;
-		vertical-align: middle;
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 10pt;
-	}
-}
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (-webkit-min-device-pixel-ratio: 2) {
-	div.topbar
-	{
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		-o-user-select: none;
-		unselectable: on;
-		z-index: 15;
-		position:fixed;
-		width: auto;
-		min-width: 500px;
-		height: 35;
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 18pt;
-		background-color: rgba(0,0,0,0.7);
-	}
-	div.topspace
-	{
-		width: 100%;
-		height: 35;
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 18pt;
-	}
-
-	div.maplink
-	{
-		cursor: pointer;
-		height: 20;
-		display: inline-block;
-		text-align: center;
-		border-style: solid;
-		border-width: 1px;
-		border-radius: 3px;
-		padding-left: 5px;
-		padding-right: 5px;
-		vertical-align: middle;
-		font-family: Verdana, Arial, Helvetica, sans-serif;
-		font-size: 10pt;
-	}
-}
-
 body
 {
 	cursor: crosshair;
@@ -121,7 +30,7 @@ div.topbar
 	position:fixed;
 	width: 100%;
 	min-width: 500px;
-	height: 35;
+	height: auto;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 	background-color: rgba(0,0,0,0.7);
@@ -129,7 +38,7 @@ div.topbar
 div.topspace
 {
 	width: 100%;
-	height: 35;
+	height: auto;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 }
