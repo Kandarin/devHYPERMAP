@@ -30,7 +30,7 @@ div.topbar
 	position:fixed;
 	width: 100%;
 	min-width: 500px;
-	height: auto;
+	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 	background-color: rgba(0,0,0,0.7);
@@ -38,7 +38,7 @@ div.topbar
 div.topspace
 {
 	width: 100%;
-	height: auto;
+	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 }
@@ -225,7 +225,7 @@ a:hover
 	top: 35;
 	z-index:8;
 }
-guilds4{
+#guilds4{
 	cursor: crosshair;
 	display: none;
 	position:absolute;
@@ -261,7 +261,7 @@ guilds4{
 	top: 35;
 	z-index:4;
 }
-districts4{
+#districts4{
 	display: none;
 	position:absolute;
 	left: 0;
@@ -534,7 +534,8 @@ div.markerUIbuttonGreen
 }
 div.content
 {
-float:left;
+	height: 100%;
+  float:left;
 }
 
 #sidebar {
