@@ -30,7 +30,7 @@ div.topbar
 	position:fixed;
 	width: 100%;
 	min-width: 500px;
-	height: 60;
+	height: 100%;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 	background-color: rgba(0,0,0,0.7);
@@ -38,7 +38,7 @@ div.topbar
 div.topspace
 {
 	width: 100%;
-	height: 60;
+	height: 100%;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 }
