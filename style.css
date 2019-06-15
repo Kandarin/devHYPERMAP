@@ -27,17 +27,19 @@ div.topbar
 	-o-user-select: none;
 	unselectable: on;
 	z-index: 15;
-	position:fixed;
-	width: 1500px;
+	position: fixed;
+	width: 100%;
 	min-width: 1500px;
 	height: 35;
+	max-height: calc(100% - 50px);
+	overflow-y: auto;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 	background-color: rgba(0,0,0,0.7);
 }
 div.topspace
 {
-	width: 1500px;
+	width: 100%auto;
 	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
