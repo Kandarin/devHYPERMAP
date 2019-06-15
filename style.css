@@ -28,6 +28,7 @@ div.topbar
 	unselectable: on;
 	z-index: 15;
 	position: fixed;
+	top: 10px
 	width: 100%;
 	min-width: 1500px;
 	height: 35;
