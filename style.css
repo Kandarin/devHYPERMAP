@@ -27,7 +27,7 @@ div.topbar
 	-o-user-select: none;
 	unselectable: on;
 	z-index: 15;
-	position: fixed;
+	position: sticky;
 	top: 10px
 	width: 100%;
 	min-width: 1500px;
