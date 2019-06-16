@@ -5,6 +5,10 @@ document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
+//
+// Testing Dev branch
+//
+
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 
@@ -101,7 +105,7 @@ function toggleMarker(x,y,z) {
 	markers[index] = !markers[index];
 	if (markers[index]) {
 	document.getElementById("sidebarMarkerlist").innerHTML += "<div class='markerinfo' id=" + "markerinfo" + index + "><div class='markerLocationText'>" + getLocationString(x,y,z) + "</div><div class='markerUIbuttonRed' id='" + "markerButtonDelete" + index + "' onclick='toggleMarker(" + x + "," + y + "," + z + ")'>delete</div><div class='markerUIbuttonBlue' id='" + "markerButtonStart" + index + "' onclick='setStart(" + x + "," + y + "," + z + ")'>set as start</div><div class='markerUIbuttonGreen' id='" + "markerButtonDestination" + index + "' onclick='setDestination(" + x + "," + y + "," + z + ")'>>&nbsp;plot path here</div></div>";
-	document.body.innerHTML += "<div class='marker' id=" + "markerpoint" + index + " style='top: " + (y*24+35) + "; left: " + (x*24) + ";'></div>";
+	document.body.innerHTML += "<div class='marker' id=" + "markerpoint" + index + " style='top: " + (y*24+59) + "; left: " + (x*24) + ";'></div>";
 	}
 	else {
 	var markerPoint = document.getElementById("markerpoint" + index);
@@ -167,7 +171,7 @@ function setDestination(x,y,z) {
 
 function setDestinationType(type) {
 	if (type == "not_set") return;
-	type = type.toLowerCase();
+	type = type.replace(/\s+/, "").toLowerCase();
 	pathDestinationX = 0;
 	pathDestinationY = 0;
 	pathDestinationZ = 0;
@@ -221,7 +225,7 @@ function cycleMPValue() {
 
 function customDestination() {
 	 var destText = document.forms["customDestinationForm"]["dest"].value;
-	 destText = destText.toLowerCase();
+	 destText = destText.replace(/\s+/, "").toLowerCase();
 	 setDestinationType(destText);
 }
 
@@ -236,12 +240,9 @@ function clearMarkers() {
 
 function pathCostModifier(index) {
 	var modifier = 1.0;
-	if (TileTypes[index] == "sea" || TileTypes[index] == "a sea") modifier = waterCostModifier;
-        else if (TileTypes[index] == "a lake") modifier = waterCostModifier;
-        else if (TileTypes[index] == "a peaceful sea") modifier = waterCostModifier;
-        else if (TileTypes[index] == "river" || TileTypes[index] == "a river") modifier = waterCostModifier;
-        else if (TileTypes[index] == "a searing river") modifier = waterCostModifier;
-        else if (TileTypes[index] == "a lava") modifier = waterCostModifier;
+	if (TileTypes[index] == "sea") modifier = waterCostModifier;
+	else if (TileTypes[index] == "river") modifier = waterCostModifier;
+	else if (TileTypes[index] == "searingriver") modifier = waterCostModifier;
 	else if (TileTypes[index] == "mountain") modifier = 2.0;
 
 	if (flightEnabled) modifier = 0.5;
@@ -518,16 +519,17 @@ function toggleBadges() {
 	if (showBadges && showGuilds) toggleGuilds();
 		if(showBadges) {
 			document.getElementById("overlay2").style.display = "block";
+			document.getElementById("overlay2").style.top = "0px";
 			if (Z == 0) document.getElementById("badges0").style.display = "block";
 			else if (Z == 1) document.getElementById("badges1").style.display = "block";
 			else if (Z == 2) document.getElementById("badges2").style.display = "block";
-		  else if (Z == 3) document.getElementById("badges3").style.display = "block";
+		        else if (Z == 3) document.getElementById("badges3").style.display = "block";
 		} else {
 			document.getElementById("overlay2").style.display = "none";
 			document.getElementById("badges0").style.display = "none";
 			document.getElementById("badges1").style.display = "none";
 			document.getElementById("badges2").style.display = "none";
-		  document.getElementById("badges3").style.display = "none";
+		        document.getElementById("badges3").style.display = "none";
 		}
 	if (showBadges) document.getElementById("badgeButton").innerHTML = "Badges: ON";
 	else document.getElementById("badgeButton").innerHTML = "Badges: OFF";
@@ -536,13 +538,13 @@ function toggleBadges() {
 function toggleDistricts() {
 	showDistricts = !showDistricts;
 		if(showDistricts) {
-		  if (Z == 0) document.getElementById("districts0").style.display = "block";
-			else if (Z == 1) document.getElementById("districts1").style.display = "block";
+		        if (Z == 0) document.getElementById("districts0").style.display = "block";
+                        else if (Z == 1) document.getElementById("districts1").style.display = "block";
 			else if (Z == 2) document.getElementById("districts2").style.display = "block";
 			else if (Z == 3) document.getElementById("districts3").style.display = "block";
 		} else {
-		  document.getElementById("districts0").style.display = "none";
-      document.getElementById("districts1").style.display = "none";
+		        document.getElementById("districts0").style.display = "none";
+                        document.getElementById("districts1").style.display = "none";
 			document.getElementById("districts2").style.display = "none";
 			document.getElementById("districts3").style.display = "none";
 		}
@@ -559,16 +561,17 @@ function toggleGuilds() {
 	if (showGuilds && showBadges) toggleBadges();
 		if(showGuilds) {
 			document.getElementById("overlay3").style.display = "block";
+			document.getElementById("overlay3").style.top = "0px";
 			if (Z == 0) document.getElementById("guilds0").style.display = "block";
-			  else if (Z == 1) document.getElementById("guilds1").style.display = "block";
-			  else if (Z == 2) document.getElementById("guilds2").style.display = "block";
-		    else if (Z == 3) document.getElementById("guilds3").style.display = "block";
-		  } else {
-			  document.getElementById("overlay3").style.display = "none";
-			  document.getElementById("guilds0").style.display = "none";
-			  document.getElementById("guilds1").style.display = "none";
-			  document.getElementById("guilds2").style.display = "none";
-		    document.getElementById("guilds3").style.display = "none";
+			else if (Z == 1) document.getElementById("guilds1").style.display = "block";
+			else if (Z == 2) document.getElementById("guilds2").style.display = "block";
+		        else if (Z == 3) document.getElementById("guilds3").style.display = "block";
+		} else {
+			document.getElementById("overlay3").style.display = "none";
+			document.getElementById("guilds0").style.display = "none";
+			document.getElementById("guilds1").style.display = "none";
+			document.getElementById("guilds2").style.display = "none";
+		        document.getElementById("guilds3").style.display = "none";
 		}
 	if (showGuilds) document.getElementById("guildsButton").innerHTML = "Guilds: ON";
 	else document.getElementById("guildsButton").innerHTML = "Guilds: OFF";
@@ -620,7 +623,7 @@ if (portalTargetZ > -1) {
 				portalTargetZ = -1;
 			}
 			document.getElementById("you").style.left = portalTargetX*24-24;
-			document.getElementById("you").style.top = portalTargetY*24+35-24;
+			document.getElementById("you").style.top = portalTargetY*24+35-59;
 		}
 		document.getElementById("tooltip").style.top = -300;
 }
@@ -677,18 +680,17 @@ function getMousePosition(e)
 	_x = e.pageX;
 	_y = e.pageY;
 	X = parseInt((_x-0) / 24);
-	Y = parseInt((_y-35) / 24);
-
+	Y = parseInt((_y-60) / 24);
 
 	//if ((X > 30) && (touchMode)) document.getElementById("tooltip").style.left = _x - 20 - document.getElementById("tooltip").offsetWidth;
-	document.getElementById("tooltip").style.left = _x + 20;
-	document.getElementById("tooltip").style.top = _y - 30;
+	document.getElementById("tooltip").style.left = _x + 13;
+	document.getElementById("tooltip").style.top = _y - 50;
 	if (!xyzValid() || (e.clientY < 35)) document.getElementById("tooltip").style.top = -500;
 
 
 	if (Y > 0) {
 	document.getElementById("pointer").style.left = X*24-24;
-	document.getElementById("pointer").style.top = Y*24+35-24;
+	document.getElementById("pointer").style.top = Y*24-24;
 	}
 	updateTooltip();
 
@@ -766,6 +768,7 @@ function portalsString() {
         methodsArray = portalTravelMethods[encodeLocation(X,Y,Z)];
 
         document.getElementById("overlay").style.display = "none";
+				document.getElementById("overlay").style.top = "0px";
 	document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.66)";
 
 	if (isPortal()) {
@@ -782,8 +785,9 @@ function portalsString() {
 	if ((portalToggle%portalsArray[0]) == i) {
 		if (decodedTarget[2] == Z) {
 			document.getElementById("signal").style.left = decodedTarget[0]*24-12;
-			document.getElementById("signal").style.top = decodedTarget[1]*24-12+35;
+			document.getElementById("signal").style.top = decodedTarget[1]*24-12+0;
 			document.getElementById("overlay").style.display = "block";
+			document.getElementById("overlay").style.top = "0px";
 			document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.6)";
 		}
 		portalTargetX = decodedTarget[0];
@@ -908,7 +912,7 @@ function registerTileNames(x,y,z,name) {
 }
 
 function registerTileTypes(x,y,z,tiletype) {
-	TileTypes[encodeLocation(x,y,z)] = "" + tiletype.toLowerCase();;
+	TileTypes[encodeLocation(x,y,z)] = "" + tiletype;
 }
 
 function registerTileDescription(x,y,z,outside,inside) {
@@ -922,7 +926,7 @@ badges[encodeLocation(x,y,z)][0] = "" + inside;
 badges[encodeLocation(x,y,z)][1] = "" + name;
 badges[encodeLocation(x,y,z)][2] = "" + desc;
 
-document.getElementById("badges" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-24) + ";'><img src='icons/marker_badges.gif'></div>";
+document.getElementById("badges" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-59) + ";'><img src='icons/marker_badges.gif'></div>";
 }
 
 
@@ -931,7 +935,7 @@ guilds[encodeLocation(x,y,z)][0] = "" + name;
 guilds[encodeLocation(x,y,z)][1] = "" + power;
 guilds[encodeLocation(x,y,z)][2] = "" + inout;
 
-document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-24) + ";'><img src='icons/marker_guilds.gif'></div>";
+document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-59) + ";'><img src='icons/marker_guilds.gif'></div>";
 }
 
 
