@@ -1,0 +1,14 @@
+
+.staticBar h1 {
+   text-align: left;
+   font-size: 18pt;
+   color: #A9A9A9;
+   margin-bottom: 10px;
+   text-decoration: underline;
+}
+
+.staticBar form {
+  color: #00FF00
+  float:left;
+  margin:5px;
+}
