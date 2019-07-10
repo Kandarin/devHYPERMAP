@@ -9,8 +9,11 @@
     <h1>Enter character name to lookup</h1>
     <form>
       <label>Character Name: </label>
-      <input type="text" name="charName" maxlength="128" value="">
-      <input type="submit" name="submitBtn" value="Lookup">
+      <input type="text" name="charName" maxlength="128" value="" id='name'>
+      <input type="submit" name="submitBtn" value="Lookup" onclick="lookup(nameGrab())">
     </form>
+  </div>
 </body>
+<script type="text/javascript"></script>
+<script language="JavaScript1.2" src="profileScript.js"></script>
 </html>

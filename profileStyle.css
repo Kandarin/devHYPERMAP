@@ -1,4 +1,6 @@
-
+body {
+  background-color: #000000
+}
 .staticBar h1 {
    text-align: left;
    font-size: 18pt;
@@ -7,8 +9,14 @@
    text-decoration: underline;
 }
 
-.staticBar form {
-  color: #00FF00
+.staticBar label {
+  color: #A9A9A9;
+  float:left;
+  margin:5px;
+}
+
+.staticBar input {
+  color: #000000;
   float:left;
   margin:5px;
 }
