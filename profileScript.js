@@ -16,6 +16,11 @@ function lookup(name) {
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
 
   fetch(requestUrl)
+  .then(response => response.text())
+  .then(contents => console.log(contents))
+  .catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
+
+  fetch(requestUrl)
   .then(function(response) {
     alert("response")
     return response.json();
@@ -24,6 +29,9 @@ function lookup(name) {
     alert("json")
     console.log(JSON.stringify(myJson));
   });
+  .catch(function(error) {
+   // If there is any error you will catch them here
+ });
 
   alert("STOP!")
 }
