@@ -17,9 +17,11 @@ function lookup(name) {
 
   fetch(requestUrl)
   .then(function(response) {
+    alert("response")
     return response.json();
   })
   .then(function(myJson) {
+    alert("json")
     console.log(JSON.stringify(myJson));
   });
 
