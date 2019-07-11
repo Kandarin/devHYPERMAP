@@ -14,18 +14,18 @@ function lookup(name) {
   console.log("Character name looked up: " + name);
   alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
-  var data = JSON.parse(get(requestUrl));
-  console.log(data);
-  console.log(data.result);
-  alert("STOP!")
-  console.log(data.result.character);
-  console.log(data.result.character.id);
-  alert("Character ID: " + data.result);
-}
+  var data = $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
 
-function get(url) {
-  var req = new XMLHttpRequest();
-  req.open('GET', url, false);
-  req.send(null);
-  console.log(req.responseText);
+  let xhr = new XMLHttpRequest;
+    xhr.open('GET', requestUrl, true)
+    xhr.onload = function()
+        {
+            if (this.status === 200)
+                {
+                    console.log(JSON.parse(this.responseText));
+        }
+                }
+    xhr.send();
+
+  alert("STOP!")
 }
