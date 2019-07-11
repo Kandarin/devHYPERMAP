@@ -15,5 +15,13 @@ function lookup(name) {
   alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
 
+  fetch(requestUrl)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  });
+
   alert("STOP!")
 }
