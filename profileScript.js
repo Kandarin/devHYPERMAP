@@ -14,7 +14,7 @@ function lookup(name) {
   console.log("Character name looked up: " + name);
   alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
-  var data = $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
+  var data = $.getJSON('https://www.whateverorigin.org/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
 
   let xhr = new XMLHttpRequest;
     xhr.open('GET', requestUrl, true)
