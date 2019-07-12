@@ -18,6 +18,9 @@ function lookup(name) {
 
   var charData = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
   console.log(charData);
+  charJson = JSON.stringify(charData);
+  console.log(charJson);
+  console.log(charJson.result);
   alert(charData);
   alert("STOP!");
 }
