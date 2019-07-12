@@ -16,7 +16,14 @@ function lookup(name) {
   alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
 
-  var charData = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
+  //var charData = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
+
+  var testJson = $.getJSON("test.json", function(json) {
+    return json; // this will show the info it in firebug console
+  });
+  console.log(testJson);
+
+
   console.log(charData);
   charJson = JSON.stringify(charData);
   console.log(charJson);
