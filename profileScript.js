@@ -15,19 +15,28 @@ function lookup(name) {
   console.log("Character name looked up: " + name);
   alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
-
-  //var charData = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
-
-  var testJson = $.getJSON("test.json", function(json) {
-    return json; // this will show the info it in firebug console
-  });
-  console.log(testJson);
-
-
+  console.log(requestUrl);
+  var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
+  console.log(corsUrl);
+  var charData = ohGosh(corsUrl);
   console.log(charData);
-  charJson = JSON.stringify(charData);
-  console.log(charJson);
-  console.log(charJson.result);
-  alert(charData);
+
   alert("STOP!");
+}
+
+function ohGosh(url) {
+  fetch(url)
+  .then(function(response) {
+    alert("Log 1");
+    console.log("Log 1");
+    return response.json();
+  })
+  .then(function(myJson) {
+    alert("Log 2");
+    console.log("Log 2");
+    console.log(JSON.stringify(myJson));
+    var charData = JSON.stringify(myJson);
+    alert("STOP LAST!")
+    return charData
+  });
 }
