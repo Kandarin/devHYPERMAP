@@ -17,7 +17,7 @@ function lookup(name) {
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
 
   var charData = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
-
-  alert(charData)
-  alert("STOP!")
+  console.log(charData);
+  alert(charData);
+  alert("STOP!");
 }
