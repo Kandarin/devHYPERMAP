@@ -16,9 +16,8 @@ function lookup(name) {
   alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
 
-  $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?', function(data){
-	alert(data.contents);
-  });
+  var charData = $.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent(requestUrl) + '&callback=?');
 
+  alert(charData)
   alert("STOP!")
 }
