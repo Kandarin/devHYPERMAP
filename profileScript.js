@@ -13,30 +13,25 @@ function nameGrab() {
 function lookup(name) {
   // looks up name in the NC profile API, then stores json data
   console.log("Character name looked up: " + name);
-  alert(name);
+  //alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
   console.log(requestUrl);
   var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
   console.log(corsUrl);
-  var charData = ohGosh(corsUrl);
-  console.log(charData);
 
-  alert("STOP!");
+  getUserAsync(corsUrl)
+    .then(data => parseJson(data));
+
 }
 
-function ohGosh(url) {
-  fetch(url)
-  .then(function(response) {
-    alert("Log 1");
-    console.log("Log 1");
-    return response.json();
-  })
-  .then(function(myJson) {
-    alert("Log 2");
-    console.log("Log 2");
-    console.log(JSON.stringify(myJson));
-    var charData = JSON.stringify(myJson);
-    alert("STOP LAST!")
-    return charData
-  });
+function parseJson(data) {
+  console.log(data);
+  alert("We made it this far!");
+}
+
+async function getUserAsync(url)
+{
+  let response = await fetch(url);
+  let data = await response.json()
+  return data;
 }
