@@ -10,23 +10,40 @@ function nameGrab() {
   return charName
 }
 
-function lookup(name) {
+
+async function lookup(name) {
   // looks up name in the NC profile API, then stores json data
-  console.log("Character name looked up: " + name);
+  await console.log("Character name looked up: " + name);
   //alert(name);
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
-  console.log(requestUrl);
+  await console.log(requestUrl);
   var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
-  console.log(corsUrl);
+  await console.log(corsUrl);
 
-  getUserAsync(corsUrl)
-    .then(data => parseJson(data));
+  //await getUserAsync(corsUrl)
+  //  .then(data => await parseJson(data));
+
+  const dataJson = async () => {
+  console.log(await getUserAsync(corsUrl));
+  }
+    //.then(dataJson => await parseJson(data));
+
+  await console.log(dataJson);
+  await alert("STOP!");
 
 }
 
 function parseJson(data) {
   console.log(data);
   alert("We made it this far!");
+  return data;
+}
+
+async function getData2(corsUrl) {
+    const response = await fetch(corsUrl, {});
+    const json = await response.json();
+
+    return json;
 }
 
 async function getUserAsync(url)
