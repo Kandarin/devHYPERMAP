@@ -1,34 +1,52 @@
 body {
-  background-color: #000000
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
 }
 
 .staticBar {
-  position: relative;
-
+  order: 1;
+  margin-bottom: 5px;
+  display: inline-flex;
+  flex-direction: column;
 }
 
-.staticBar h1 {
-   text-align: left;
-   font-size: 18pt;
-   color: #A9A9A9;
-   margin-bottom: 10px;
-   position: relative;
-   text-decoration: underline;
-}
-
-.staticBar label {
+#bar1 {
+  order: 1;
+  text-align: left;
+  font-size: 18pt;
   color: #A9A9A9;
-  position: relative;
-  float:left;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+#bar2 {
+  order: 2;
+}
+
+.inputs {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+#inLabel {
+  order: 1;
+  color: #A9A9A9;
   margin:5px;
 }
 
-.staticBar #submitButton {
+#inPut {
+  order: 2;
+  color: #000000;
+  margin:5px;
+}
+
+#inButton {
+  order: 3;
   cursor: pointer;
   color: #FFFFFF;
   margin: 5px;
   height: 20;
-	display: inline-block;
 	text-align: center;
 	border-style: solid;
 	border-width: 1px;
@@ -40,30 +58,120 @@ body {
 	font-size: 10pt;
 }
 
-.staticBar input {
-  color: #000000;
-  float:left;
-  margin:5px;
+.charInfo {
+  order: 2;
+  color: #FFFFFF;
+  border-style: inset;
+  border-width: 5px;
+  display: inline-flex;
+  flex-direction: row;
+  width: 75%;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.charInfo {
+.charDescription {
+  order: 3;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
   color: #FFFFFF;
+}
+
+.text {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.nameFields {
+  order: 1;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.levelFields {
+  order: 2;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.classFields {
+  order: 3;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#aliveStatus {
+  order: 4;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 14pt;
+}
+
+.factionFields {
+  order: 5;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#charInfo1 {
+  order: 1;
+  padding: 15px;
+}
+
+#charInfo2{
+  order: 2;
+  padding-left: 200px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.left {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.right {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#physLabel {
   border-style: solid;
   border-width: 5px;
-  display: flex;
-  position: fixed;
+  padding: 5px;
 }
 
-.charInfo #nameLabel {
-  padding-left: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-right: 15px;
+#physDescription {
+  padding: 10px;
 }
 
-.charInfo #charName {
-  padding-right: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
+#personalLabel {
+  border-style: solid;
+  border-width: 5px;
+  padding: 5px;
+}
+
+#personalDescription {
+  padding: 10px;
+}
+
+#charPosition {
+  padding-right: 2px;
+}
+
+#charFaction {
+  padding-left: 2px;
 }

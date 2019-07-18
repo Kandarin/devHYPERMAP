@@ -6,20 +6,42 @@
 <link rel="STYLESHEET" type="text/css" href="profileStyle.css" />
 <body>
   <div class="staticBar">
-    <h1>Enter character name to lookup</h1>
-    <form>
-      <label>Character Name: </label>
-      <input type="text" name="charName" maxlength="128" value="" id='name'>
-      <div id="submitButton" style="border-color:#FFFFFF; background-color:#000000" onclick="lookup()"> Submit </div>
-    </form>
+    <h1 id="bar1">Enter character name to lookup</h1>
+    <div class="inputs" id="bar2">
+      <label id="inLabel">Character Name: </label>
+      <input id="inPut" type="text" name="charName" maxlength="128" value="">
+      <div id="inButton" style="border-color:#FFFFFF; background-color:#000000" onclick="lookup()"> Submit </div>
+    </div>
   </div>
   <div class="charInfo">
-    <div id="nameLabel">Character Name:</div>
-    <div id="charName">plscks</div>
+    <div class="text" id="charInfo1">
+      <div class="nameFields">
+        <div class="left" id="nameLabel">Character Name:</div>
+        <div class="right" id="charName">Dr. plscks M.D., Servant of Death</div>
+      </div>
+      <div class="levelFields">
+        <div class="left" id="levelLabel">Level:</div>
+        <div class="right" id="charLevel">8</div>
+      </div>
+      <div class="classFields">
+        <div class="left" id="classLabel">Class:</div>
+        <div class="right" id="charClass">Mortal</div>
+      </div>
+      <div id="aliveStatus">This character is alive</div>
+      <div class="factionFields">
+        <div id="charPosition">Leader in</div>
+        <div id="charFaction">Ridleybank Resistance Front</div>
+      </div>
+    </div>
+    <div id="charInfo2"><img src="http://www.nexusclash.com/modules/Game/character_images/1537639261-Fury.jpg"></div>
   </div>
-  <div class="pictar">
-    <img src="https://github.com/plscks/python/raw/master/nochar.png">
+  <div class="charDescription">
+    <div id="physLabel">Physical Description:</div>
+    <div id="physDescription">A very tall man with elongated limbs and crude, almost feral, mannerisms. His body has many scars and wounds that expose gleaming bone and knotted muscle, but he seems unperturbed and focuses attentively on his surroundings.  He is wearing a Sun Scorched & Faded Astronaut Boots, an Astronaut Boots,  a Black Eye,  a Weathered & Faded Brown Wool Scarf, a Brown Wool Scarf,  a Chainmail Shirt,  a Shiny Thing,  a Black Kitten-Eared Hoodie, a Silver Ring,  and a Werewolf Mask. He radiates a deep, calming aura of peace.</div>
+    <div id="personalLabel">Personal Description:</div>
+    <div id="personalDescription">I'm here, I do stuff?! Pants?! What pants!?<p><p>Ex-Cosmonaut.</div>
   </div>
+
 </body>
 <script type="text/javascript"></script>
 <script src="profileScript2.js"></script>
