@@ -1,24 +1,31 @@
 body {
   background-color: #000000
 }
+
+.staticBar {
+  position: relative;
+
+}
+
 .staticBar h1 {
    text-align: left;
    font-size: 18pt;
    color: #A9A9A9;
    margin-bottom: 10px;
+   position: relative;
    text-decoration: underline;
 }
 
 .staticBar label {
   color: #A9A9A9;
+  position: relative;
   float:left;
   margin:5px;
 }
 
-.submit {
+.staticBar #submitButton {
   cursor: pointer;
   color: #FFFFFF;
-  float: left;
   margin: 5px;
   height: 20;
 	display: inline-block;
@@ -37,4 +44,26 @@ body {
   color: #000000;
   float:left;
   margin:5px;
+}
+
+.charInfo {
+  color: #FFFFFF;
+  border-style: solid;
+  border-width: 5px;
+  display: flex;
+  position: fixed;
+}
+
+.charInfo #nameLabel {
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+}
+
+.charInfo #charName {
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
 }
