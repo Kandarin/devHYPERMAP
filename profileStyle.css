@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #000000;
+  background-color: #252525;
 }
 
 .staticBar {
@@ -60,7 +60,7 @@ body {
 
 .charInfo {
   order: 2;
-  color: #FFFFFF;
+  border-color: #C08080;
   border-style: inset;
   border-width: 5px;
   display: inline-flex;
@@ -92,6 +92,17 @@ body {
   justify-content: space-between;
 }
 
+#nameLabel {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #008080;
+}
+
+#charName {
+  color: #80C0C0;
+  padding-top: 9px;
+}
+
 .levelFields {
   order: 2;
   display: inline-flex;
@@ -99,11 +110,33 @@ body {
   justify-content: space-between;
 }
 
+#levelLabel {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #008080;
+}
+
+#charLevel {
+  color: #80C0C0;
+  padding-top: 9px;
+}
+
 .classFields {
   order: 3;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+#classLabel {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #008080;
+}
+
+#charClass {
+  color: #80C0C0;
+  padding-top: 9px;
 }
 
 #aliveStatus {
@@ -116,6 +149,7 @@ body {
 
 .factionFields {
   order: 5;
+  color: #0080FF;
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -149,23 +183,31 @@ body {
 }
 
 #physLabel {
+  color: #FFC000;
+  background-color: #2A3439;
   border-style: solid;
+  border-color: #C08080;
   border-width: 5px;
   padding: 5px;
 }
 
 #physDescription {
-  padding: 10px;
+  color: #80C0C0;
+  padding: 20px;
 }
 
 #personalLabel {
+  color: #FFC000;
+  background-color: #2A3439;
   border-style: solid;
+  border-color: #C08080;
   border-width: 5px;
   padding: 5px;
 }
 
 #personalDescription {
-  padding: 10px;
+  color: #80C0C0;
+  padding: 20px;
 }
 
 #charPosition {
