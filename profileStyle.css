@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #252525;
+  background-color: #0D0221;
 }
 
 .staticBar {
@@ -76,6 +76,18 @@ body {
   flex-direction: column;
   padding: 5px;
   margin-bottom: 5px;
+  margin-top: 5px;
+  color: #FFFFFF;
+}
+
+.charBadges {
+  order: 4;
+  display: inline-flex;
+  flex-direction: row;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #C08080;
+  padding: 5px;
   margin-top: 5px;
   color: #FFFFFF;
 }
@@ -216,4 +228,34 @@ body {
 
 #charFaction {
   padding-left: 2px;
+}
+
+.charStats {
+  order: 1;
+  display: inline-table;
+  border: 1px solid;
+  color: #FFFFFF;
+}
+
+.charExpBadges {
+  order: 2;
+  padding: 20px;
+  color: #FFFFFF;
+}
+
+#statTitle {
+  color: #FFFFFF;
+}
+
+.badgeLeft {
+  padding: 3px;
+}
+
+.badgeRight {
+  padding: 3px;
+}
+
+th {
+  font-size: 20;
+  text-decoration: underline;
 }
