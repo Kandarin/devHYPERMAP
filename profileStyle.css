@@ -15,7 +15,7 @@ body {
   order: 1;
   text-align: left;
   font-size: 18pt;
-  color: #A9A9A9;
+  color: #F6019D;
   margin-bottom: 10px;
   text-decoration: underline;
 }
@@ -31,7 +31,7 @@ body {
 
 #inLabel {
   order: 1;
-  color: #A9A9A9;
+  color: #2DE2E6;
   margin:5px;
 }
 
@@ -44,7 +44,7 @@ body {
 #inButton {
   order: 3;
   cursor: pointer;
-  color: #FFFFFF;
+  color: #2DE2E6;
   margin: 5px;
   height: 20;
 	text-align: center;
@@ -60,7 +60,8 @@ body {
 
 .charInfo {
   order: 2;
-  border-color: #C08080;
+  background-color: #2E2157;
+  border-color: #F706CF;
   border-style: inset;
   border-width: 5px;
   display: inline-flex;
@@ -82,14 +83,14 @@ body {
 
 .charBadges {
   order: 4;
+  background-color: #241734;
   display: inline-flex;
   flex-direction: row;
   border-width: 5px;
   border-style: solid;
-  border-color: #C08080;
+  border-color: #2De2E6;
   padding: 5px;
   margin-top: 5px;
-  color: #FFFFFF;
 }
 
 .text {
@@ -107,11 +108,11 @@ body {
 #nameLabel {
   font-weight: bold;
   font-size: 14pt;
-  color: #008080;
+  color: #FF4365;
 }
 
 #charName {
-  color: #80C0C0;
+  color: #2DE2E6;
   padding-top: 9px;
 }
 
@@ -125,11 +126,11 @@ body {
 #levelLabel {
   font-weight: bold;
   font-size: 14pt;
-  color: #008080;
+  color: #FF4365;
 }
 
 #charLevel {
-  color: #80C0C0;
+  color: #2DE2E6;
   padding-top: 9px;
 }
 
@@ -143,11 +144,11 @@ body {
 #classLabel {
   font-weight: bold;
   font-size: 14pt;
-  color: #008080;
+  color: #FF4365;
 }
 
 #charClass {
-  color: #80C0C0;
+  color: #2DE2E6;
   padding-top: 9px;
 }
 
@@ -161,7 +162,7 @@ body {
 
 .factionFields {
   order: 5;
-  color: #0080FF;
+  color: #F9C80E;
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -195,30 +196,30 @@ body {
 }
 
 #physLabel {
-  color: #FFC000;
-  background-color: #2A3439;
+  color: #F9C80E;
+  background-color: #540D6E;
   border-style: solid;
-  border-color: #C08080;
+  border-color: #D40078;
   border-width: 5px;
   padding: 5px;
 }
 
 #physDescription {
-  color: #80C0C0;
+  color: #2DE2E6;
   padding: 20px;
 }
 
 #personalLabel {
-  color: #FFC000;
-  background-color: #2A3439;
+  color: #FF6C11;
+  background-color: #541388;
   border-style: solid;
-  border-color: #C08080;
+  border-color: #F6019D;
   border-width: 5px;
   padding: 5px;
 }
 
 #personalDescription {
-  color: #80C0C0;
+  color: #023788;
   padding: 20px;
 }
 
@@ -232,19 +233,23 @@ body {
 
 .charStats {
   order: 1;
+  background-color: #0D0221;
   display: inline-table;
   border: 1px solid;
-  color: #FFFFFF;
+  color: #FF3864;
+  border-color: #650D89;
+  padding: 10px;
+  margin: 15px;
 }
 
 .charExpBadges {
   order: 2;
   padding: 20px;
-  color: #FFFFFF;
+  color: #FFC611;
 }
 
 #statTitle {
-  color: #FFFFFF;
+  color: #F9C80E;
 }
 
 .badgeLeft {
