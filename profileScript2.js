@@ -54,20 +54,24 @@ async function badgeParse(badges) {
   var alchoholBadges = ["Low Tolerance", "Frat Boy", "Alcoholic", "Sinatra", "Friend of Bill"];
   var angelBadges = ["Perverter", "Ruiner", "Nightmare Whisperer", "Voice of Armageddon", "The End of Hope"];
   var booksBadges = ["Reader", "Bookworm", "Librarian", "Bibliophile", "Teachers Pet"];
+  var damDealBadges = ["Crusher", "Smasher", "Bloodletter", "Assassin", "Surgeons Lament", "Widowmaker"];
+  var damTakeBadges = ["Punching Bag", "Bruised", "Crushed", "All Stitched Up", "Keeping Healers in Business", "Constantly in Traction"];
   var deathsBadges = ["Buried", "Wormfood", "Aspect Hunter", "Lich Pet", "Coffinmakers Friend"];
-  var demonsBadges = ["Cleanser", "", "", "", ""];
-  var doorsDestBadges = ["", "", "", "", ""];
-  var doorsRepBadges = ["", "", "", "", ""];
-  var foodBadges = ["", "", "", "", ""];
-  var itemsCraBadges = ["", "", "", "", ""];
-  var itemsRepBadges = ["", "", "", "", ""];
-  var killsBadges = ["", "", "", "", ""];
-  var locksBadges = ["", "", "", "", ""];
-  var petsBadges = ["", "", "", "", ""];
-  var pillsBadges = ["", "", "", "", ""];
-  var powRemBadges = ["", "", "", "", ""];
-  var powResBadges = ["", "", "", "", ""];
-  var targetsBadges = ["", "", "", "", ""];
+  var demonsBadges = ["Cleanser", "Demonslayer", "Hammer of Light", "Justicebringer", "Blade of the Word"];
+  var doorsDestBadges = ["Opportunity Knocks", "Big Bad Wolf", "Heres Johnny", "Landshark", "Homewrecker"];
+  var doorsRepBadges = ["Apprentice Carpenter", "Woodworker", "Journeyman Carpenter", "Architect", "Master Carpenter"];
+  var foodBadges = ["Taste Tester", "Gourmand", "Glutton", "Masticator", "Food Critic"];
+  var healBadges = ["Medic", "Doctor", "Surgeon", "Healer", "Bodyweaver", "Lifesaver"];
+  var itemsCraBadges = ["Sweat Shop Worker", "Journeyman Blacksmith", "Factory Foreman", "Artisan", "Artifex"];
+  var itemsRepBadges = ["Tinker", "Mender", "Fixer", "Handyman", "80s Action Hero"];
+  var killsBadges = ["Killer", "Warrior", "Disciple of Death", "Master of Death", "Gravemaker"];
+  var locksBadges = ["Thief", "Burglar", "Second-Story Man", "Locksmith", "Master of Tumblers"];
+  var petsBadges = ["Dogkiller", "Exterminator", "Pest Control", "Trophy Hunter", "Director of Animal Testing"];
+  var pillsBadges = ["I Have a Headache", "Pill-popper", "Living the High Life", "Monster Addict", "Slave to the Habit"];
+  var powRemBadges = ["Wiresnipper", "Fusebreaker", "Circuitbreaker", "Blackout", "Degenerate"];
+  var powResBadges = ["Apprentice Electrician", "Fusemaker", "Journeyman Electrician", "Circuitmaker", "Master Electrician"];
+  var targetsBadges = ["Barn Assassin", "Sharpshooter", "Deadeye", "Gunslinger", "Hickok"];
+  var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot", "Untouched Wilderness", "Well of Truth", "What Once Was Lost"];
 }
 
 async function getData2(corsUrl) {
