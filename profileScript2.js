@@ -41,17 +41,23 @@ async function lookup() {
     document.getElementById('aliveStatus').innerHTML = "<span style='color: #FD1D53;'>This character is a formless spirit, floating above the planes, dead.</span>"
   }
 
-  var factionLink = jsonData.result.character.faction.url;
-  document.getElementById('charPosition').innerHTML = "<a href='" + factionLink + "'>[link]</a>" + " " + jsonData.result.character.faction.rank + " in ";
-  document.getElementById('charFaction').innerHTML = jsonData.result.character.faction.name;
+  if (jsonData.result.character.faction.id == 0) {
+    document.getElementById('charPosition').innerHTML = "";
+    document.getElementById('charFaction').innerHTML = nameName + " is not currently in a faction";
+  } else {
+    var factionLink = jsonData.result.character.faction.url;
+    document.getElementById('charPosition').innerHTML = "<a href='" + factionLink + "'>[link]</a>" + " " + jsonData.result.character.faction.rank + " in ";
+    document.getElementById('charFaction').innerHTML = jsonData.result.character.faction.name;
+  }
+
   document.getElementById('charInfo2').innerHTML = "<img src='" + jsonData.result.character.avatar.url + "'>";
   document.getElementById('physDescription').innerHTML = jsonData.result.character.description.physical;
   document.getElementById('personalDescription').innerHTML = jsonData.result.character.description.personal;
-  //await badgeParse(jsonData.result.character.badges);
+  await badgeParse(jsonData.result.character.badges, nameName);
 }
 
-async function badgeParse(badges) {
-  var alchoholBadges = ["Low Tolerance", "Frat Boy", "Alcoholic", "Sinatra", "Friend of Bill"];
+async function badgeParse(badges, name) {
+  var alcoholBadges = ["Low Tolerance", "Frat Boy", "Alcoholic", "Sinatra", "Friend of Bill"];
   var angelBadges = ["Perverter", "Ruiner", "Nightmare Whisperer", "Voice of Armageddon", "The End of Hope"];
   var booksBadges = ["Reader", "Bookworm", "Librarian", "Bibliophile", "Teachers Pet"];
   var damDealBadges = ["Crusher", "Smasher", "Bloodletter", "Assassin", "Surgeons Lament", "Widowmaker"];
@@ -72,6 +78,60 @@ async function badgeParse(badges) {
   var powResBadges = ["Apprentice Electrician", "Fusemaker", "Journeyman Electrician", "Circuitmaker", "Master Electrician"];
   var targetsBadges = ["Barn Assassin", "Sharpshooter", "Deadeye", "Gunslinger", "Hickok"];
   var exploreBadges = ["A New Chapter", "Academic Probation", "All In The Family", "And I Must Scream", "At All Costs", "Baraas Ascends", "Birthing pool", "Broken Alliance", "Broken Promises", "Circumnavigation", "Citadel", "Clinging to Life", "Cloudwatching", "Cops and Robbers", "Dedicated Few", "Enthroned", "Explosive Yield", "Fall of the Watcher", "Four Corners", "Fragmented Return", "Halls of the Scholar", "Halls of Wrath", "Idle hands", "In The Name Of Science", "Institute of Arts", "Into the Dark", "Last Confession", "Reasons to Live", "Remorse", "Stolen Victory", "Tapestry of Time", "The Earth Shudders", "The Legend", "The Little King", "The Rise of Kafa-El", "The Voice", "Under The Boot", "Untouched Wilderness", "Well of Truth", "What Once Was Lost"];
+
+  alcoholBadges = alcoholBadges.filter(val => badges.includes(val));
+  angelBadges = angelBadges.filter(val => badges.includes(val));
+  booksBadges = booksBadges.filter(val => badges.includes(val));
+  damDealBadges = damDealBadges.filter(val => badges.includes(val));
+  damTakeBadges = damTakeBadges.filter(val => badges.includes(val));
+  deathsBadges = deathsBadges.filter(val => badges.includes(val));
+  demonsBadges = demonsBadges.filter(val => badges.includes(val));
+  doorsDestBadges = doorsDestBadges.filter(val => badges.includes(val));
+  doorsRepBadges = doorsRepBadges.filter(val => badges.includes(val));
+  foodBadges = foodBadges.filter(val => badges.includes(val));
+  healBadges = healBadges.filter(val => badges.includes(val));
+  itemsCraBadges = itemsCraBadges.filter(val => badges.includes(val));
+  itemsRepBadges = itemsRepBadges.filter(val => badges.includes(val));
+  killsBadges = killsBadges.filter(val => badges.includes(val));
+  locksBadges = locksBadges.filter(val => badges.includes(val));
+  petsBadges = petsBadges.filter(val => badges.includes(val));
+  pillsBadges = pillsBadges.filter(val => badges.includes(val));
+  powRemBadges = powRemBadges.filter(val => badges.includes(val));
+  powResBadges = powResBadges.filter(val => badges.includes(val));
+  targetsBadges = targetsBadges.filter(val => badges.includes(val));
+  exploreBadges = exploreBadges.filter(val => badges.includes(val));
+
+  var badgeNumNorm = ["< 10", "10 - 49", "50 - 99", "100 - 499", "500 - 999", "≥ 1000"];
+  var badgeNumDam = ["< 500", "500 - 999", "1000 - 4999", "5000 - 9999", "10000 - 49999", "50000 - 99999", "≥ 100000"];
+  var badgeNumHeal = ["< 500", "500 - 999", "1000 - 4999", "5000 - 9999", "10000 - 14999", "15000 - 19999", "≥ 20000"];
+
+  document.getElementById('charAlc').innerHTML = badgeNumNorm[alcoholBadges.length];
+  document.getElementById('charAngel').innerHTML = badgeNumNorm[angelBadges.length];
+  document.getElementById('charBooks').innerHTML = badgeNumNorm[booksBadges.length];
+  document.getElementById('charDamDeal').innerHTML = badgeNumDam[damDealBadges.length];
+  document.getElementById('charDamTake').innerHTML = badgeNumDam[damTakeBadges.length];
+  document.getElementById('charDeaths').innerHTML = badgeNumNorm[deathsBadges.length];
+  document.getElementById('charDemons').innerHTML = badgeNumNorm[demonsBadges.length];
+  document.getElementById('charDoorsDest').innerHTML = badgeNumNorm[doorsDestBadges.length];
+  document.getElementById('charDoorsRep').innerHTML = badgeNumNorm[doorsRepBadges.length];
+  document.getElementById('charFood').innerHTML = badgeNumNorm[foodBadges.length];
+  document.getElementById('charHp').innerHTML = badgeNumHeal[healBadges.length];
+  document.getElementById('charItCraft').innerHTML = badgeNumNorm[itemsCraBadges.length];
+  document.getElementById('charItRep').innerHTML = badgeNumNorm[itemsRepBadges.length];
+  document.getElementById('charKills').innerHTML = badgeNumNorm[killsBadges.length];
+  document.getElementById('charLocks').innerHTML = badgeNumNorm[locksBadges.length];
+  document.getElementById('charPets').innerHTML = badgeNumNorm[petsBadges.length];
+  document.getElementById('charPills').innerHTML = badgeNumNorm[pillsBadges.length];
+  document.getElementById('charPowerRem').innerHTML = badgeNumNorm[powRemBadges.length];
+  document.getElementById('charPowerRest').innerHTML = badgeNumNorm[powResBadges.length];
+  document.getElementById('charTargets').innerHTML = badgeNumNorm[targetsBadges.length];
+
+  if (exploreBadges.length == 0) {
+    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find";
+  } else {
+    badgesLeft = 40 - exploreBadges.length;
+    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find";
+  }
 }
 
 async function getData2(corsUrl) {
