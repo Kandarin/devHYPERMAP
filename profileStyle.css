@@ -37,6 +37,7 @@ body {
 
 #inPut {
   order: 2;
+  cursor: text;
   color: #000000;
   margin:5px;
 }
@@ -235,7 +236,7 @@ body {
   order: 1;
   background-color: #0D0221;
   display: inline-table;
-  border: 1px solid;
+  border: 2px solid;
   color: #FF3864;
   border-color: #650D89;
   padding: 10px;
@@ -258,6 +259,7 @@ body {
 
 .badgeRight {
   padding: 3px;
+  color: #F6019D;
 }
 
 th {
