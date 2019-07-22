@@ -3,6 +3,15 @@
 // This utilizes the NC profile API to search characters by name
 // I am new at this, so, uhm, sorry probably.
 //written by plscks
+var input = document.getElementById("inPut");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("inButton").click();
+  }
+});
+
 function nameGrab() {
   // Gets the text the user has typed into the input field
   var charName = document.getElementById("inPut").value;
