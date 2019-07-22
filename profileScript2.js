@@ -10,9 +10,44 @@ function nameGrab() {
   return charName
 }
 
+function resetFields() {
+  document.getElementById('charName').innerHTML = "";
+  document.getElementById('charLevel').innerHTML = "";
+  document.getElementById('charClass').innerHTML = "";
+  document.getElementById('aliveStatus').innerHTML = "";
+  document.getElementById('charPosition').innerHTML = "";
+  document.getElementById('charFaction').innerHTML = "";
+  document.getElementById('charInfo2').innerHTML = "";
+  document.getElementById('physDescription').innerHTML = "";
+  document.getElementById('personalDescription').innerHTML = "";
+  document.getElementById('charAlc').innerHTML = "-";
+  document.getElementById('charAngel').innerHTML = "-";
+  document.getElementById('charBooks').innerHTML = "-";
+  document.getElementById('charDamDeal').innerHTML = "-";
+  document.getElementById('charDamTake').innerHTML = "-";
+  document.getElementById('charDeaths').innerHTML = "-";
+  document.getElementById('charDemons').innerHTML = "-";
+  document.getElementById('charDoorsDest').innerHTML = "-";
+  document.getElementById('charDoorsRep').innerHTML = "-";
+  document.getElementById('charFood').innerHTML = "-";
+  document.getElementById('charHp').innerHTML = "-";
+  document.getElementById('charItCraft').innerHTML = "-";
+  document.getElementById('charItRep').innerHTML = "-";
+  document.getElementById('charKills').innerHTML = "-";
+  document.getElementById('charLocks').innerHTML = "-";
+  document.getElementById('charPets').innerHTML = "-";
+  document.getElementById('charPills').innerHTML = "-";
+  document.getElementById('charPowerRem').innerHTML = "-";
+  document.getElementById('charPowerRest').innerHTML = "-";
+  document.getElementById('charTargets').innerHTML = "-";
+  document.getElementById('exploreBadges').innerHTML = "";
+  return;
+}
+
 async function lookup() {
   // looks up name in the NC profile API, then stores json data
-  name = nameGrab();
+  resetFields();
+  name  = nameGrab();
   var requestUrl = "https://www.nexusclash.com/modules.php?name=Character&charname=" + name + "&format=json";
   var corsUrl = 'https://cors-anywhere.herokuapp.com/' + requestUrl
 
