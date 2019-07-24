@@ -5,10 +5,6 @@ document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
-//
-// Testing Dev branch
-//
-
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 
@@ -97,15 +93,20 @@ var params = {}; var startParam; var destParam;
 
 
 
+function resetSidebar() {
+	document.getElementById("sidebar").innerHTML = "<br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. <br>This is very much so a work in progress, many thanks to <br>Azure, catvom, and the community for the updated google sheets maps. <br><br>Set at least two markers to calculate a shortest route between them,<br>OR set at least one marker to find the closest building of a type.<div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.";
+}
 
-
+function loadToolsPane() {
+	document.getElementById("sidebar").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for.<br>First is a tool I wrote for looking up profiles by name, it utilizes the existing<br>profile lookup API, the second is a slightly updated character planner, some<br>typos are fixed and the buttons have been moved so as to not change position<br>with the table. I did not write the planner, only modified the existing one.<br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b3.5.html_v2_1.html>Updated Character Planner</a>";
+}
 
 function toggleMarker(x,y,z) {
 	var index = encodeLocation(x,y,z);
 	markers[index] = !markers[index];
 	if (markers[index]) {
 	document.getElementById("sidebarMarkerlist").innerHTML += "<div class='markerinfo' id=" + "markerinfo" + index + "><div class='markerLocationText'>" + getLocationString(x,y,z) + "</div><div class='markerUIbuttonRed' id='" + "markerButtonDelete" + index + "' onclick='toggleMarker(" + x + "," + y + "," + z + ")'>delete</div><div class='markerUIbuttonBlue' id='" + "markerButtonStart" + index + "' onclick='setStart(" + x + "," + y + "," + z + ")'>set as start</div><div class='markerUIbuttonGreen' id='" + "markerButtonDestination" + index + "' onclick='setDestination(" + x + "," + y + "," + z + ")'>>&nbsp;plot path here</div></div>";
-	document.body.innerHTML += "<div class='marker' id=" + "markerpoint" + index + " style='top: " + (y*24+59) + "; left: " + (x*24) + ";'></div>";
+	document.body.innerHTML += "<div class='marker' id=" + "markerpoint" + index + " style='top: " + (y*24+35) + "; left: " + (x*24) + ";'></div>";
 	}
 	else {
 	var markerPoint = document.getElementById("markerpoint" + index);
@@ -171,7 +172,7 @@ function setDestination(x,y,z) {
 
 function setDestinationType(type) {
 	if (type == "not_set") return;
-	type = type.replace(/\s+/, "").toLowerCase();
+	type = type.toLowerCase();
 	pathDestinationX = 0;
 	pathDestinationY = 0;
 	pathDestinationZ = 0;
@@ -225,7 +226,7 @@ function cycleMPValue() {
 
 function customDestination() {
 	 var destText = document.forms["customDestinationForm"]["dest"].value;
-	 destText = destText.replace(/\s+/, "").toLowerCase();
+	 destText = destText.toLowerCase();
 	 setDestinationType(destText);
 }
 
@@ -240,9 +241,12 @@ function clearMarkers() {
 
 function pathCostModifier(index) {
 	var modifier = 1.0;
-	if (TileTypes[index] == "sea") modifier = waterCostModifier;
-	else if (TileTypes[index] == "river") modifier = waterCostModifier;
-	else if (TileTypes[index] == "searingriver") modifier = waterCostModifier;
+	if (TileTypes[index] == "sea" || TileTypes[index] == "a sea") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a lake") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a peaceful sea") modifier = waterCostModifier;
+        else if (TileTypes[index] == "river" || TileTypes[index] == "a river") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a searing river") modifier = waterCostModifier;
+        else if (TileTypes[index] == "a lava") modifier = waterCostModifier;
 	else if (TileTypes[index] == "mountain") modifier = 2.0;
 
 	if (flightEnabled) modifier = 0.5;
@@ -455,7 +459,7 @@ for(var i = 0; i < 20000; i++) {
 function showPlane(planeIndex) {
 
 
-
+	resetSidebar();
 	Z = planeIndex;
 
 	showhideMarkersPlanechange();
@@ -486,6 +490,7 @@ function showPlane(planeIndex) {
 
 function toggleTouchscreenMode() {
 
+resetSidebar();
 touchmodeFixLocation = false;
 
 	touchMode = !touchMode;
@@ -499,6 +504,7 @@ touchmodeFixLocation = false;
 }
 
 function toggleMarkerMode() {
+	resetSidebar();
 	setMarkers = !setMarkers;
 	if (setMarkers) document.getElementById("markerModeButton").innerHTML = "Set/Remove Markers: ON";
 	else document.getElementById("markerModeButton").innerHTML = "Set/Remove Markers: OFF";
@@ -511,6 +517,7 @@ function toggleDescriptions() {
 }
 
 function toggleBadges() {
+	resetSidebar();
 	if (!badgesInitialized) {
 		initializeBadges();
 		badgesInitialized = true;
@@ -519,32 +526,32 @@ function toggleBadges() {
 	if (showBadges && showGuilds) toggleGuilds();
 		if(showBadges) {
 			document.getElementById("overlay2").style.display = "block";
-			document.getElementById("overlay2").style.top = "0px";
 			if (Z == 0) document.getElementById("badges0").style.display = "block";
 			else if (Z == 1) document.getElementById("badges1").style.display = "block";
 			else if (Z == 2) document.getElementById("badges2").style.display = "block";
-		        else if (Z == 3) document.getElementById("badges3").style.display = "block";
+		  else if (Z == 3) document.getElementById("badges3").style.display = "block";
 		} else {
 			document.getElementById("overlay2").style.display = "none";
 			document.getElementById("badges0").style.display = "none";
 			document.getElementById("badges1").style.display = "none";
 			document.getElementById("badges2").style.display = "none";
-		        document.getElementById("badges3").style.display = "none";
+		  document.getElementById("badges3").style.display = "none";
 		}
 	if (showBadges) document.getElementById("badgeButton").innerHTML = "Badges: ON";
 	else document.getElementById("badgeButton").innerHTML = "Badges: OFF";
 }
 
 function toggleDistricts() {
+	resetSidebar();
 	showDistricts = !showDistricts;
 		if(showDistricts) {
-		        if (Z == 0) document.getElementById("districts0").style.display = "block";
-                        else if (Z == 1) document.getElementById("districts1").style.display = "block";
+		  if (Z == 0) document.getElementById("districts0").style.display = "block";
+			else if (Z == 1) document.getElementById("districts1").style.display = "block";
 			else if (Z == 2) document.getElementById("districts2").style.display = "block";
 			else if (Z == 3) document.getElementById("districts3").style.display = "block";
 		} else {
-		        document.getElementById("districts0").style.display = "none";
-                        document.getElementById("districts1").style.display = "none";
+		  document.getElementById("districts0").style.display = "none";
+      document.getElementById("districts1").style.display = "none";
 			document.getElementById("districts2").style.display = "none";
 			document.getElementById("districts3").style.display = "none";
 		}
@@ -553,6 +560,7 @@ function toggleDistricts() {
 }
 
 function toggleGuilds() {
+	resetSidebar();
 	if (!guildsInitialized) {
 		initializeGuilds();
 		guildsInitialized = true;
@@ -561,17 +569,16 @@ function toggleGuilds() {
 	if (showGuilds && showBadges) toggleBadges();
 		if(showGuilds) {
 			document.getElementById("overlay3").style.display = "block";
-			document.getElementById("overlay3").style.top = "0px";
 			if (Z == 0) document.getElementById("guilds0").style.display = "block";
-			else if (Z == 1) document.getElementById("guilds1").style.display = "block";
-			else if (Z == 2) document.getElementById("guilds2").style.display = "block";
-		        else if (Z == 3) document.getElementById("guilds3").style.display = "block";
-		} else {
-			document.getElementById("overlay3").style.display = "none";
-			document.getElementById("guilds0").style.display = "none";
-			document.getElementById("guilds1").style.display = "none";
-			document.getElementById("guilds2").style.display = "none";
-		        document.getElementById("guilds3").style.display = "none";
+			  else if (Z == 1) document.getElementById("guilds1").style.display = "block";
+			  else if (Z == 2) document.getElementById("guilds2").style.display = "block";
+		    else if (Z == 3) document.getElementById("guilds3").style.display = "block";
+		  } else {
+			  document.getElementById("overlay3").style.display = "none";
+			  document.getElementById("guilds0").style.display = "none";
+			  document.getElementById("guilds1").style.display = "none";
+			  document.getElementById("guilds2").style.display = "none";
+		    document.getElementById("guilds3").style.display = "none";
 		}
 	if (showGuilds) document.getElementById("guildsButton").innerHTML = "Guilds: ON";
 	else document.getElementById("guildsButton").innerHTML = "Guilds: OFF";
@@ -623,7 +630,7 @@ if (portalTargetZ > -1) {
 				portalTargetZ = -1;
 			}
 			document.getElementById("you").style.left = portalTargetX*24-24;
-			document.getElementById("you").style.top = portalTargetY*24+35-59;
+			document.getElementById("you").style.top = portalTargetY*24+35-24;
 		}
 		document.getElementById("tooltip").style.top = -300;
 }
@@ -680,17 +687,18 @@ function getMousePosition(e)
 	_x = e.pageX;
 	_y = e.pageY;
 	X = parseInt((_x-0) / 24);
-	Y = parseInt((_y-60) / 24);
+	Y = parseInt((_y-35) / 24);
+
 
 	//if ((X > 30) && (touchMode)) document.getElementById("tooltip").style.left = _x - 20 - document.getElementById("tooltip").offsetWidth;
-	document.getElementById("tooltip").style.left = _x + 13;
-	document.getElementById("tooltip").style.top = _y - 50;
+	document.getElementById("tooltip").style.left = _x + 20;
+	document.getElementById("tooltip").style.top = _y - 30;
 	if (!xyzValid() || (e.clientY < 35)) document.getElementById("tooltip").style.top = -500;
 
 
 	if (Y > 0) {
 	document.getElementById("pointer").style.left = X*24-24;
-	document.getElementById("pointer").style.top = Y*24-24;
+	document.getElementById("pointer").style.top = Y*24+35-24;
 	}
 	updateTooltip();
 
@@ -768,7 +776,6 @@ function portalsString() {
         methodsArray = portalTravelMethods[encodeLocation(X,Y,Z)];
 
         document.getElementById("overlay").style.display = "none";
-				document.getElementById("overlay").style.top = "0px";
 	document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.66)";
 
 	if (isPortal()) {
@@ -785,9 +792,8 @@ function portalsString() {
 	if ((portalToggle%portalsArray[0]) == i) {
 		if (decodedTarget[2] == Z) {
 			document.getElementById("signal").style.left = decodedTarget[0]*24-12;
-			document.getElementById("signal").style.top = decodedTarget[1]*24-12+0;
+			document.getElementById("signal").style.top = decodedTarget[1]*24-12+35;
 			document.getElementById("overlay").style.display = "block";
-			document.getElementById("overlay").style.top = "0px";
 			document.getElementById("tooltip").style.backgroundColor = "rgba(0,0,0,0.6)";
 		}
 		portalTargetX = decodedTarget[0];
@@ -912,7 +918,7 @@ function registerTileNames(x,y,z,name) {
 }
 
 function registerTileTypes(x,y,z,tiletype) {
-	TileTypes[encodeLocation(x,y,z)] = "" + tiletype;
+	TileTypes[encodeLocation(x,y,z)] = "" + tiletype.toLowerCase();;
 }
 
 function registerTileDescription(x,y,z,outside,inside) {
@@ -926,7 +932,7 @@ badges[encodeLocation(x,y,z)][0] = "" + inside;
 badges[encodeLocation(x,y,z)][1] = "" + name;
 badges[encodeLocation(x,y,z)][2] = "" + desc;
 
-document.getElementById("badges" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-59) + ";'><img src='icons/marker_badges.gif'></div>";
+document.getElementById("badges" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-24) + ";'><img src='icons/marker_badges.gif'></div>";
 }
 
 
@@ -935,7 +941,7 @@ guilds[encodeLocation(x,y,z)][0] = "" + name;
 guilds[encodeLocation(x,y,z)][1] = "" + power;
 guilds[encodeLocation(x,y,z)][2] = "" + inout;
 
-document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-59) + ";'><img src='icons/marker_guilds.gif'></div>";
+document.getElementById("guilds" + z + "").innerHTML += "<div class='badgeMarker' style='left: " + (x*24-24) + "; top: " + (y*24-24) + ";'><img src='icons/marker_guilds.gif'></div>";
 }
 
 
@@ -1004,9 +1010,6 @@ createPortal( [encodeLocation(29,39,3),1,encodeLocation(29,39,0)] , ["Sewer Exit
 
 createPortal( [encodeLocation(14,6,0),1,encodeLocation(14,6,3)] , ["Subterran Railway Entrance"],[0]);
 createPortal( [encodeLocation(14,6,3),1,encodeLocation(14,6,0)] , ["Subterran Railway Exit"],[0]);
-
-createPortal( [encodeLocation(31,20,3),1,encodeLocation(12,34,2)] , ["Portal"], [5]);
-createPortal( [encodeLocation(17,18,3),1,encodeLocation(25,7,1)] , ["Portal"], [5]);
 
 createPortal( [encodeLocation(19,17,0),7,encodeLocation(26,3,0),encodeLocation(17,7,0),encodeLocation(8,36,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);
 createPortal( [encodeLocation(26,3,0),7,encodeLocation(17,7,0),encodeLocation(8,36,0),encodeLocation(19,17,0),encodeLocation(5,24,0),encodeLocation(36,11,0),encodeLocation(19,35,0),encodeLocation(34,36,0)] , ["Ferry","Ferry","Ferry","Ferry","Ferry","Ferry","Ferry"],[0,0,0,0,0,0,0]);

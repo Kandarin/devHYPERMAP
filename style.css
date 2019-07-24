@@ -1,6 +1,6 @@
 body
 {
-	cursor: pointer;
+	cursor: crosshair;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 	margin: 0px;
@@ -9,35 +9,31 @@ body
 }
 div.content
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
 	display: inline-block;
 	min-height: 500px;
-	/*+placement: 0px 25px;*/
-	position: relative;
-	left: 0px;
-	top: 25px;
 }
 div.topbar
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
 	z-index: 15;
-	position: fixed;
+	position:fixed;
 	width: 100%;
-	min-width: 500px;
-	height: auto;
+	min-width: 1500px;
+	height: 35;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0,0,0,0.7);
 }
 div.topspace
 {
@@ -46,6 +42,7 @@ div.topspace
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 18pt;
 }
+
 div.maplink
 {
 	cursor: pointer;
@@ -61,6 +58,7 @@ div.maplink
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10pt;
 }
+
 div.maplinkHighlight
 {
 	cursor: pointer;
@@ -75,7 +73,7 @@ div.maplinkHighlight
 	vertical-align: middle;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 10pt;
-	color: #FFFF00;
+	color: #ffff00;
 }
 div.resourceTypeDestinationButton
 {
@@ -97,6 +95,7 @@ div.toptitle
 	text-align: left;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 7pt;
+	
 }
 div.topupdatedate
 {
@@ -107,6 +106,7 @@ div.topupdatedate
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 }
+
 a:visited
 {
 	color: #FFFFFF;
@@ -123,248 +123,232 @@ a:hover
 {
 	color: #FFFFFF;
 }
-#valhalla
-{
+
+#valhalla{
 	cursor: crosshair;
 	unselectable: on;
 }
-#elysium
-{
-	cursor: crosshair;
-	unselectable: on;
-	display: none;
-}
-#stygia
-{
+#elysium{
 	cursor: crosshair;
 	unselectable: on;
 	display: none;
 }
-#sewers
-{
+#stygia{
 	cursor: crosshair;
 	unselectable: on;
 	display: none;
 }
-#warrens
-{
+#sewers{
 	cursor: crosshair;
 	unselectable: on;
 	display: none;
 }
-#terraNullius
-{
+#warrens{
 	cursor: crosshair;
 	unselectable: on;
 	display: none;
 }
-#badges0
-{
+#terraNullius{
+	cursor: crosshair;
+	unselectable: on;
+	display: none;
+}
+#badges0{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#badges1
-{
+#badges1{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
-	left: 0;
-	top: 35px;
-	z-index: 8;
-}
-#badges2
-{
-	cursor: crosshair;
-	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#badges3
-{
+#badges2{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#guilds0
-{
+#badges3{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#guilds1
-{
+#badges4{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#guilds2
-{
+#guilds0{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#guilds3
-{
+#guilds1{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#guilds4
-{
+#guilds2{
 	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
 	top: 35;
-	z-index: 8;
+	z-index:8;
 }
-#districts0
-{
+#guilds3{
+	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
-	top: 0px;
-	z-index: 4;
+	top: 35;
+	z-index:8;
 }
-#districts1
-{
+guilds4{
+	cursor: crosshair;
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
-	z-index: 4;
-	top: 0px;
+	top: 35;
+	z-index:8;
 }
-#districts2
-{
+#districts0{
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
-	top: 0px;
-	z-index: 4;
+	top: 35;
+	z-index:4;
 }
-#districts3
-{
+#districts1{
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
-	z-index: 4;
-	top: 0px;
+	top: 35;
+	z-index:4;
 }
-#districts4
-{
+#districts2{
 	display: none;
-	position: absolute;
+	position:absolute;
 	left: 0;
-	top: 0px;
-	z-index: 4;
+	top: 35;
+	z-index:4;
 }
-#tooltiptext
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#districts3{
+	display: none;
+	position:absolute;
+	left: 0;
+	top: 35;
+	z-index:4;
+}
+districts4{
+	display: none;
+	position:absolute;
+	left: 0;
+	top: 35;
+	z-index:4;
+}
+#tooltiptext{
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	vertical-align: top;
+	vertical-align:top;
 	display: inline-block;
 }
-#tooltipControls
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#tooltipControls{
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	vertical-align: top;
+	vertical-align:top;
 	display: inline-block;
 }
-#tooltipControlsButtonCycle
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#tooltipControlsButtonCycle{
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	cursor: pointer;
+cursor: pointer;
 	margin: 5px;
 	padding: 2px;
-	border: 1px solid #00FFFF;
+	border: 1px solid #00ffff;
 	background-color: #003333;
 	border-radius: 3px;
 	float: left;
 }
-#tooltipControlsButtonEnter
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#tooltipControlsButtonEnter{
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	cursor: pointer;
+cursor: pointer;
 	margin: 5px;
 	padding: 2px;
-	border: 1px solid #00FF00;
+	border: 1px solid #00ff00;
 	background-color: #003300;
 	border-radius: 3px;
 	float: left;
 }
-#tooltipControlsButtonCancel
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#tooltipControlsButtonCancel{
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	cursor: pointer;
+cursor: pointer;
 	margin: 5px;
 	padding: 2px;
-	border: 1px solid #FF0000;
+	border: 1px solid #ff0000;
 	background-color: #330000;
 	border-radius: 3px;
 	float: left;
 }
-#previewmap
-{
-	margin: 5px;
-	margin-left: 20px;
-	background: url(mini-valhalla.png);
-	background-position: 0px 0px;
-	display: inline-block;
-	background-repeat: no-repeat;
+#previewmap{
+margin: 5px;
+margin-left: 20px;
+background: url(mini-valhalla.png);
+background-position: -0px -0px;
+display: inline-block;
+background-repeat: no-repeat;
 	width: 108;
 	height: 108;
 }
+
 #overlay
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -380,9 +364,9 @@ a:hover
 }
 #overlay2
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -398,9 +382,9 @@ a:hover
 }
 #overlay3
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -416,9 +400,9 @@ a:hover
 }
 #overlay4
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+	-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -439,13 +423,13 @@ a:hover
 	position: absolute;
 	left: 0px;
 	top: -200px;
-	max-width: 500px;
+	max-width:500px;
 	z-index: 20;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #ffffff;
 	border-radius: 5px;
 	padding: 3px;
-	color: #FFFFFF;
-	background-color: rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+	background-color: rgba(0,0,0,0.8)
 }
 #you
 {
@@ -478,7 +462,7 @@ div.marker
 }
 div.badgeMarker
 {
-	display: block;
+display: block;
 	width: 72px;
 	height: 72px;
 	position: absolute;
@@ -486,7 +470,7 @@ div.badgeMarker
 }
 div.guildMarker
 {
-	display: block;
+display: block;
 	width: 72px;
 	height: 72px;
 	position: absolute;
@@ -494,7 +478,8 @@ div.guildMarker
 }
 div.markerinfo
 {
-	border: 0px solid #FFFFFF;
+
+	border: 0px solid #ffffff;
 	border-radius: 5px;
 	margin: 10px;
 	background-color: #000000;
@@ -503,7 +488,7 @@ div.markerinfo
 div.destinationTypeButtons
 {
 	display: inline-block;
-	border: 0px solid #FFFFFF;
+	border: 0px solid #ffffff;
 	border-radius: 5px;
 	margin: 10px;
 	background-color: #000000;
@@ -511,7 +496,7 @@ div.destinationTypeButtons
 }
 div.markerLocationText
 {
-	display: inline-block;
+	display:inline-block;
 }
 div.markerUIbuttonRed
 {
@@ -519,7 +504,7 @@ div.markerUIbuttonRed
 	display: inline-block;
 	padding: 2px;
 	margin-left: 10px;
-	border: 1px solid #FF0000;
+	border: 1px solid #ff0000;
 	background-color: #330000;
 	border-radius: 3px;
 	cursor: pointer;
@@ -541,38 +526,37 @@ div.markerUIbuttonGreen
 	display: inline-block;
 	padding: 2px;
 	margin-left: 10px;
-	border: 1px solid #00FF00;
+	border: 1px solid #00ff00;
 	background-color: #003300;
 	border-radius: 3px;
 	cursor: pointer;
 	display: none;
 }
-#sidebar
+div.content 
 {
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+float:left;
+}
+
+#sidebar {
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
-	position: absolute;
+	position:fixed;
 	display: inline-block;
 	height: 200px;
-	min-width: 400px;
+	min-width: 200px;
 	z-index: 7;
 	float: left;
 	background-color: #000000;
 	padding-left: 20px;
-	/*+placement: displace 0px 25px;*/
-	position: absolute;
-	margin-left: 0px;
-	margin-top: 25px;
 }
-#sidebarMarkerlist
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#sidebarMarkerlist {
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -582,11 +566,10 @@ div.markerUIbuttonGreen
 	background-color: #000000;
 	padding-top: 20px;
 }
-#sidebarDestinationTypelist
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#sidebarDestinationTypelist {
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -595,11 +578,10 @@ div.markerUIbuttonGreen
 	background-color: #000000;
 	padding-top: 20px;
 }
-#pathfindingSettings
-{
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
+#pathfindingSettings {
+-moz-user-select: none; 
+	-webkit-user-select: none; 
+	-ms-user-select: none; 
 	user-select: none;
 	-o-user-select: none;
 	unselectable: on;
@@ -609,34 +591,33 @@ div.markerUIbuttonGreen
 	padding-top: 20px;
 	padding-top: 20px;
 }
-select
-{
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	border: 1px solid #00FF00;
-	background-color: #003300;
-	border-radius: 3px;
-	color: white;
+select {
+background-repeat:no-repeat;
+background-position:bottom left;
+   border: 1px solid #00FF00;
+   background-color: #003300;
+ 	border-radius: 3px;
+   color: white; 
 }
-select.mpcost
-{
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	border: 1px solid #00FFFF;
-	background-color: #003333;
-	border-radius: 3px;
-	color: white;
+select.mpcost {
+background-repeat:no-repeat;
+background-position:bottom left;
+   border: 1px solid #00FFFF;
+   background-color: #003333;
+ 	border-radius: 3px;
+   color: white; 
 }
-input
-{
-	background-repeat: no-repeat;
-	background-position: bottom left;
-	border: 1px solid #00FF00;
-	background-color: #003333;
-	border-radius: 3px;
-	color: white;
+
+
+
+input {
+background-repeat:no-repeat;
+background-position:bottom left;
+   border: 1px solid #00FF00;
+   background-color: #003333;
+ 	border-radius: 3px;
+   color: white; 
 }
-#customText
-{
+#customText {
 	background-color: #333333;
 }
