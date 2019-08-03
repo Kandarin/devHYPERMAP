@@ -1,6 +1,7 @@
 document.captureEvents(Event.MOUSEMOVE);
 //document.onmousemove = getMousePosition;
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
+document.getElementById("content").ontouchend = function(event) {getMouseClick(event)};
 document.captureEvents(Event.KEYPRESS);
 document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
@@ -98,7 +99,7 @@ function loadToolsPane() {
 	showTools = !showTools;
 	if (showTools) {
 		document.getElementById("toolsButton").innerHTML = "Tools: ON";
-		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for.<br>First is a tool I wrote for looking up profiles by name, it utilizes the existing<br>profile lookup API, the second is a slightly updated character planner, some<br>typos are fixed and the buttons have been moved so as to not change position<br>with the table. I did not write the planner, only modified the existing one.<br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a><br><br><a href=profileLookup_v2.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b3.5.html_v2_1_v2.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
+		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for.<br>First is a tool I wrote for looking up profiles by name, it utilizes the existing<br>profile lookup API, the second is a slightly updated character planner, some<br>typos are fixed and the buttons have been moved so as to not change position<br>with the table. I did not write the planner, only modified the existing one.<br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a><br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b3.5.html_v2_1.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
 	} else {
 		document.getElementById("toolsButton").innerHTML = "Tools: OFF";
 		document.getElementById("infoText").innerHTML = origSidebar;
