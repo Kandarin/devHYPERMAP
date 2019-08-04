@@ -73,6 +73,12 @@ body {
 }
 
 #sidebarMarkerlist {
+  -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-o-user-select: none;
+	unselectable: on;
 	display: inline-block;
 	z-index: 7;
 	float: left;
@@ -81,6 +87,12 @@ body {
 }
 
 #sidebarDestinationTypelist {
+  -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-o-user-select: none;
+	unselectable: on;
 	display: none;
 	z-index: 7;
 	background-color: #000000;
@@ -88,6 +100,12 @@ body {
 }
 
 #pathfindingSettings {
+  -moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-o-user-select: none;
+	unselectable: on;
 	display: inline-block;
 	z-index: 7;
 	background-color: #000000;
@@ -353,4 +371,12 @@ a:hover {
 	border-radius: 3px;
 	cursor: pointer;
 	display: none;
+}
+
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px) {
+}
+
+@-ms-viewport {
 }
