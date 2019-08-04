@@ -358,6 +358,8 @@ a:hover {
 @media only screen
 and (min-device-width : 375px)
 and (max-device-width : 812px) {
+  zoom: 0;
+  initial-scale: 0.1;
 
   html {
       height: 100%;
