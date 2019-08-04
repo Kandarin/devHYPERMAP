@@ -8,7 +8,6 @@ html {
 }
 
 body {
-  cursor: crosshair;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   font-size: 8pt;
   margin: 0px;
@@ -30,6 +29,7 @@ body {
   height: 35px;
   display: inline-flex;
   flex-direction: row;
+  cursor: default;
 }
 
 .maplink {
@@ -49,6 +49,23 @@ body {
   margin: 3px;
 }
 
+.maplinkHighlight {
+  cursor: pointer;
+  height: 20;
+  display: inline-block;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 5px;
+  vertical-align: middle;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  color: #ffff00;
+}
+
 .bottomBar {
   order: 2;
   display: flex;
@@ -61,6 +78,7 @@ body {
   flex: 1 1 content;
   display: inline-flex;
   position: relative;
+  cursor: crosshair;
 }
 
 .sidebar {
@@ -69,6 +87,7 @@ body {
   display: inline-flex;
   flex-direction: column;
   position: relative;
+  cursor: default;
 }
 
 #sidebarMarkerlist {
