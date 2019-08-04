@@ -1,8 +1,8 @@
 document.captureEvents(Event.MOUSEMOVE);
 //document.onmousemove = getMousePosition;
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
-document.getElementById("content").ontouchstart = function(event) {getMousePosition(event)};
-document.getElementById("content").ontouchend = function(event) {getMouseClick(event)};
+document.getElementById("content").addEventListener('touchstart', function(event) {getMousePosition(event)}, {passive: true});
+document.getElementById("content").addEventListener('touchend', function(event) {getMouseClick(event)}, {passive: true});
 document.captureEvents(Event.KEYPRESS);
 document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
