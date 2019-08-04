@@ -1,7 +1,6 @@
 @viewport {
   width: device-width ;
   zoom: 1.0 ;
-  initial-scale: 0.1;
 }
 
 html {
@@ -354,16 +353,4 @@ a:hover {
 	border-radius: 3px;
 	cursor: pointer;
 	display: none;
-}
-
-@media only screen
-and (min-device-width : 375px)
-and (max-device-width : 812px) {
-  zoom: 0.1;
-  initial-scale: 0.1;
-}
-
-@-ms-viewport {
-  width: device-width ;
-  initial-scale: 0.1;
 }
