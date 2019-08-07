@@ -70,24 +70,21 @@ body {
 .bottomBar {
   order: 2;
   display: flex;
-  flex: 1 1 content;
+  align-items: flex-start;
   flex-direction: row;
 }
 
 .content {
   order: 1;
-  flex: 1 1;
   align-self: flex-start;
-  width: 1008px;
-  display: inline-flex;
   position: relative;
   cursor: crosshair;
 }
 
 .sidebar {
   order: 2;
-  flex: 1 0 500px;
   max-width: 400px;
+  align-self: flex-start;
   display: inline-flex;
   flex-direction: column;
   position: relative;
