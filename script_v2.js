@@ -1,7 +1,8 @@
 document.captureEvents(Event.MOUSEMOVE);
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
 document.captureEvents(Event.KEYPRESS);
-document.onclick = getMouseClick;
+//document.onclick = getMouseClick;
+document.getElementById("content").onclick = function(event) {getMouseClick(event)};
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
