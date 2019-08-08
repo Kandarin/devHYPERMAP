@@ -11,7 +11,7 @@ if (window.matchMedia("(any-pointer: coarse)").matches) {
 }
 if (matchMedia('(pointer:fine)').matches) {
     hasMouse = true;
-		alert("hasMouse: " hasMouse);
+		alert("hasMouse: " + hasMouse);
 }
 
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
