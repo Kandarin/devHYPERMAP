@@ -1,3 +1,4 @@
+//Mobile friendly test version
 document.captureEvents(Event.MOUSEMOVE);
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
 document.captureEvents(Event.KEYPRESS);
