@@ -1,8 +1,7 @@
 document.captureEvents(Event.MOUSEMOVE);
 document.getElementById("content").onmousemove = function(event) {getMousePosition(event)};
 document.captureEvents(Event.KEYPRESS);
-//document.onclick = getMouseClick;
-document.getElementById("content").onclick = function(event) {getMouseClick(event)};
+document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
@@ -591,7 +590,6 @@ function cancelPortalTouch() {
 
 function getMouseClick(e) {
 	getMousePosition(e);
-	alert("MouseClick");
 	if (setMarkers) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	} else if (!touchMode) {
@@ -642,8 +640,10 @@ function recursive_offset(aobj) {
 }
 
 function getMousePosition(e) {
-	alert("MousePosition");
 	if (touchmodeFixLocation) return;
+	if (touchMode && setMarkers) {
+		if (xyzValid()) toggleMarker(X,Y,Z);
+	}
 	var offsetpos = recursive_offset(document.getElementById("content"));
   posX = event.clientX+offsetpos.x;
   posY = event.clientY+offsetpos.y;
