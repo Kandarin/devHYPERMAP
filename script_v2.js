@@ -641,9 +641,6 @@ function recursive_offset(aobj) {
 
 function getMousePosition(e) {
 	if (touchmodeFixLocation) return;
-	if (touchMode && setMarkers) {
-		if (xyzValid()) getMouseClick(e);
-	}
 	var offsetpos = recursive_offset(document.getElementById("content"));
   posX = event.clientX+offsetpos.x;
   posY = event.clientY+offsetpos.y;
@@ -656,6 +653,9 @@ function getMousePosition(e) {
 	_y = posY;
 	X = parseInt((_x-0) / 24);
 	Y = parseInt((_y+30) / 24);
+	if (setMarkers && touchMode) {
+		if (xyzValid()) toggleMarker(X,Y,Z);
+	}
 	document.getElementById("tooltip").style.left = _x + 12;
 	document.getElementById("tooltip").style.top = _y + 0;
 	if (Y > 0) {
