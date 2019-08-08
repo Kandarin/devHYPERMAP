@@ -5,13 +5,8 @@ document.onclick = getMouseClick;
 document.captureEvents(Event.KEYPRESS);
 document.onkeypress = getKeyPress;
 
-if (window.matchMedia("(any-pointer: coarse)").matches) {
-    hasTouch = true;
-}
-if (matchMedia('(pointer:fine)').matches) {
-    hasMouse = true;
-}
-
+var hasTouch;
+var hasMouse;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
 var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false;
@@ -71,6 +66,13 @@ for (var i = 0; i < guilds.length; ++i) {
 var markers = new Array(20000);
 for (var i = 0; i < markers.length; ++i) {
 	markers[i] = false;
+}
+
+if (window.matchMedia("(any-pointer: coarse)").matches) {
+    hasTouch = true;
+}
+if (matchMedia('(pointer:fine)').matches) {
+    hasMouse = true;
 }
 
 initializePortals();
