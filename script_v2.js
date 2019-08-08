@@ -591,7 +591,7 @@ function cancelPortalTouch() {
 function getMouseClick(e) {
 	getMousePosition(e);
 	if (setMarkers) {
-		if (xyzValid()) toggleMarker(X,Y,Z);
+		if (xyzValid()) toggleMarker(X,Y,Z); alert("xyzValid: " + xyzValid());
 	} else if (!touchMode) {
 		if (e.shiftKey) {
 			cyclePortals();
