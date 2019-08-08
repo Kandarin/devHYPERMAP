@@ -659,6 +659,7 @@ function getMousePosition(e) {
 		document.getElementById("pointer").style.left = X*24 - 24;
 		document.getElementById("pointer").style.top = Y*24 - 24;
 	}
+	if (!xyzValid() || (e.clientY < 35)) document.getElementById("tooltip").style.top = -500;
 	if (Y < 1 || X < 1) { updateTooltip("out"); }
 	else if ((Z == 0 && X > 40) || ( Z == 0 && Y > 40)) {	updateTooltip("out"); }
 	else if ((Z == 1 && X > 30) || (Z == 1 && Y > 40)) { updateTooltip("out"); }
