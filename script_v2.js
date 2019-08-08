@@ -642,7 +642,7 @@ function recursive_offset(aobj) {
 function getMousePosition(e) {
 	if (touchmodeFixLocation) return;
 	if (touchMode && setMarkers) {
-		if (xyzValid()) toggleMarker(X,Y,Z);
+		if (xyzValid()) getMouseClick(e);
 	}
 	var offsetpos = recursive_offset(document.getElementById("content"));
   posX = event.clientX+offsetpos.x;
