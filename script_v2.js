@@ -590,8 +590,9 @@ function cancelPortalTouch() {
 
 function getMouseClick(e) {
 	getMousePosition(e);
+	alert("MouseClick");
 	if (setMarkers) {
-		if (xyzValid()) toggleMarker(X,Y,Z); alert("xyzValid: " + xyzValid());
+		if (xyzValid()) toggleMarker(X,Y,Z);
 	} else if (!touchMode) {
 		if (e.shiftKey) {
 			cyclePortals();
@@ -640,6 +641,7 @@ function recursive_offset(aobj) {
 }
 
 function getMousePosition(e) {
+	alert("MousePosition");
 	if (touchmodeFixLocation) return;
 	var offsetpos = recursive_offset(document.getElementById("content"));
   posX = event.clientX+offsetpos.x;
