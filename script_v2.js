@@ -7,11 +7,9 @@ document.onkeypress = getKeyPress;
 
 if (window.matchMedia("(any-pointer: coarse)").matches) {
     hasTouch = true;
-		alert("hasTouch: " + hasTouch);
 }
 if (matchMedia('(pointer:fine)').matches) {
     hasMouse = true;
-		alert("hasMouse: " + hasMouse);
 }
 
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
@@ -662,7 +660,7 @@ function getMousePosition(e) {
 	_y = posY;
 	X = parseInt((_x-0) / 24);
 	Y = parseInt((_y+30) / 24);
-	if (setMarkers && touchMode) {
+	if (setMarkers && hasTouch) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	}
 	document.getElementById("tooltip").style.left = _x + 12;
