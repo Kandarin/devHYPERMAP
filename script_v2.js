@@ -591,7 +591,7 @@ function isPortal() {
 
 function cyclePortals() {
 	portalToggle++;
-	updateToolTip("in");
+	updateTooltip("in");
 }
 
 function cancelPortalTouch() {
@@ -611,7 +611,7 @@ function getMouseClick(e) {
 	} else if (touchMode) {
 		if (isPortal()) {
 			if (!touchmodeFixLocation) {
-				updateToolTip("in");
+				updateTooltip("in");
 				touchmodeFixLocation = true;
 			}
 		}
