@@ -591,7 +591,7 @@ function isPortal() {
 
 function cyclePortals() {
 	portalToggle++;
-	updateToolTips("in");
+	updateToolTip("in");
 }
 
 function cancelPortalTouch() {
