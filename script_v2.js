@@ -480,9 +480,18 @@ function toggleBadges() {
 	if(showBadges) {
 		document.getElementById("overlay2").style.display = "block";
 		if (Z == 0) document.getElementById("badges0").style.display = "block";
-		else if (Z == 1) document.getElementById("badges1").style.display = "block"; document.getElementById("overlay2").style.width = "1008";
-		else if (Z == 2) document.getElementById("badges2").style.display = "block"; document.getElementById("overlay2").style.width = "768";
-	  else if (Z == 3) document.getElementById("badges3").style.display = "block"; document.getElementById("overlay2").style.width = "768";
+		else if (Z == 1) {
+			document.getElementById("badges1").style.display = "block";
+			document.getElementById("overlay2").style.width = "1008";
+		}
+		else if (Z == 2) {
+			document.getElementById("badges2").style.display = "block";
+			document.getElementById("overlay2").style.width = "768";
+		}
+	  else if (Z == 3) {
+			document.getElementById("badges3").style.display = "block";
+			document.getElementById("overlay2").style.width = "768";
+		}
 	} else {
 		document.getElementById("overlay2").style.display = "none";
 		document.getElementById("overlay2").style.width = "1008";
@@ -522,9 +531,18 @@ function toggleGuilds() {
 		if(showGuilds) {
 			document.getElementById("overlay3").style.display = "block";
 			if (Z == 0) document.getElementById("guilds0").style.display = "block";
-			else if (Z == 1) document.getElementById("guilds1").style.display = "block"; document.getElementById("overlay3").style.width = "1008";
-			else if (Z == 2) document.getElementById("guilds2").style.display = "block"; document.getElementById("overlay3").style.width = "768";
-		  else if (Z == 3) document.getElementById("guilds3").style.display = "block"; document.getElementById("overlay3").style.width = "768";
+			else if (Z == 1) {
+				document.getElementById("guilds1").style.display = "block";
+				document.getElementById("overlay3").style.width = "1008";
+			}
+			else if (Z == 2) {
+				document.getElementById("guilds2").style.display = "block";
+				document.getElementById("overlay3").style.width = "768";
+			}
+		  else if (Z == 3) {
+				document.getElementById("guilds3").style.display = "block";
+				document.getElementById("overlay3").style.width = "768";
+			}
 		} else {
 			document.getElementById("overlay3").style.display = "none";
 			document.getElementById("overlay3").style.width = "1008";
