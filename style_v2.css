@@ -332,7 +332,7 @@ a:hover {
   border: 0px solid #ffffff;
   display: flex;
   border-radius: 5px;
-  margin: 10px;
+  padding: 3px;
   background-color: #000000;
   vertical-align: top;
 }
