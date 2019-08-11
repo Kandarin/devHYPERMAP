@@ -92,7 +92,7 @@ body {
 }
 
 #sidebarMarkerlist {
-  display: inline-block;
+  display: inline-flex;
   max-width: 500px;
   z-index: 7;
   background-color: #000000;
@@ -101,14 +101,14 @@ body {
 
 #sidebarDestinationTypelist {
   display: none;
-  position: absolute;
-  bottom: 0px;
+  order: 2;
   z-index: 7;
   background-color: #000000;
   padding-top: 20px;
 }
 
 #pathfindingSettings {
+  order: 3;
   display: inline-block;
   z-index: 7;
   background-color: #000000;
@@ -327,6 +327,7 @@ a:hover {
 }
 
 .markerinfo {
+  order: 1;
   border: 0px solid #ffffff;
   display: flex;
   border-radius: 5px;
