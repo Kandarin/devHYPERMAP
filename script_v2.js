@@ -496,7 +496,7 @@ function toggleBadges() {
 			document.getElementById("overlay2").style.width = "1008";
 		}
 		else if (Z == 4 || Z == 5) {
-			document.getElementById("overlay2").style.width = "335";
+			document.getElementById("overlay2").style.display = "none";
 		}
 	} else {
 		document.getElementById("overlay2").style.display = "none";
@@ -553,7 +553,7 @@ function toggleGuilds() {
 				document.getElementById("overlay3").style.width = "1008";
 			}
 			else if (Z == 4 || Z == 5) {
-				document.getElementById("overlay3").style.width = "335";
+				document.getElementById("overlay3").style.display = "none";
 			}
 		} else {
 			document.getElementById("overlay3").style.display = "none";

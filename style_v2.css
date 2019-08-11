@@ -225,44 +225,44 @@ a:hover {
 
 #overlay {
   position: absolute;
+  left: 0px;
   width: 1008px;
   height: 1008px;
   z-index: 7;
   background-color: #000000;
   opacity: 0.5;
   display: none;
-  overflow-x: hidden;
 }
 
 #overlay2 {
   position: absolute;
+  left: 0px;
   height: 1008px;
   z-index: 7;
   background-color: #000000;
   opacity: 0.5;
   display: none;
-  overflow-x: hidden;
 }
 
 #overlay3 {
   position: absolute;
+  left: 0px;
   height: 1008px;
   z-index: 7;
   background-color: #000000;
   opacity: 0.5;
   display: none;
-  overflow-x: hidden;
 }
 
 #overlay4 {
   position: absolute;
+  left: 0px;
   width: 1008px;
   height: 1008px;
   z-index: 7;
   background-color: #000000;
   opacity: 0.5;
   display: none;
-  overflow-x: hidden;
 }
 
 #tooltip {
