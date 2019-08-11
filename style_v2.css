@@ -38,6 +38,7 @@ body {
   cursor: pointer;
   height: 20;
   display: inline-flex;
+  flex-wrap: nowrap;
   align-self: flex-start;
   flex: auto;
   border-style: solid;
