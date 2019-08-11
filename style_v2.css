@@ -21,7 +21,7 @@ body {
 
 .page {
   height: 100%;
-  max-width: 1600px;
+  width: 1600px;
 }
 
 .topbar {
@@ -37,9 +37,7 @@ body {
   cursor: pointer;
   height: 20;
   display: inline-flex;
-  flex-wrap: nowrap;
   align-self: flex-start;
-  flex: 1 0;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
