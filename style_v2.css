@@ -96,7 +96,6 @@ body {
 #sidebarMarkerlist {
   display: inline-block;
   z-index: 7;
-  align-items: flex-start;
   background-color: #000000;
   padding-top: 20px;
 }
@@ -328,6 +327,8 @@ a:hover {
 
 .markerinfo {
   border: 0px solid #ffffff;
+  display: flex;
+  align-items: flex-start;
   border-radius: 5px;
   margin: 10px;
   background-color: #000000;
@@ -344,10 +345,12 @@ a:hover {
 }
 
 .markerLocationText {
+  order: 1;
   display:inline-block;
 }
 
 .markerUIbuttonRed {
+  order: 3;
   float: right;
   display: inline-block;
   padding: 2px;
@@ -359,6 +362,7 @@ a:hover {
 }
 
 .markerUIbuttonBlue {
+  order: 2;
   float: right;
   display: inline-block;
   padding: 2px;
@@ -375,10 +379,7 @@ a:hover {
   padding: 2px;
   margin-left: 10px;
   border: 1px solid #00ff00;
-  background-color: #003300;
-  border-radius: 3px;
-  cursor: pointer;
-  display: none;
+  background-color: #003300;x
 }
 
 @media only screen
