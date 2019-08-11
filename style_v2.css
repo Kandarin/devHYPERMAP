@@ -83,7 +83,7 @@ body {
 
 .sidebar {
   order: 2;
-  max-width: 600px;
+  max-width: 500px;
   align-self: flex-start;
   display: inline-flex;
   flex-direction: column;
@@ -93,7 +93,7 @@ body {
 
 #sidebarMarkerlist {
   display: inline-block;
-  max-width: 600px;
+  max-width: 500px;
   z-index: 7;
   background-color: #000000;
   padding-top: 20px;
