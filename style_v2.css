@@ -374,8 +374,8 @@ a:hover {
 }
 
 .markerUIbuttonGreen {
-  float: right;
-  position: absolute;
+  order: 2;
+  align-self: flex-end;
   bottom: 0px;
   padding: 2px;
   margin-left: 10px;
