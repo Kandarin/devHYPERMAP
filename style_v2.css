@@ -101,6 +101,8 @@ body {
 
 #sidebarDestinationTypelist {
   display: none;
+  position: absolute;
+  bottom: 0px;
   z-index: 7;
   background-color: #000000;
   padding-top: 20px;
@@ -376,7 +378,6 @@ a:hover {
 .markerUIbuttonGreen {
   order: 2;
   align-self: flex-end;
-  bottom: 0px;
   padding: 2px;
   margin-left: 10px;
   border: 1px solid #00ff00;
