@@ -166,7 +166,7 @@ a:hover {
 .districts {
   display: none;
   position: absolute;
-  top: 35px;
+  left: 0px;
   z-index:4;
 }
 
