@@ -40,7 +40,7 @@ body {
   display: inline-flex;
   flex-wrap: nowrap;
   align-self: flex-start;
-  flex: auto;
+  flex: 1 1;
   border-style: solid;
   border-width: 1px;
   border-radius: 3px;
