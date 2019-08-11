@@ -152,23 +152,17 @@ a:hover {
 .badges {
   cursor: crosshair;
   display: none;
-  position: absolute;
-  left: 0px;
   z-index:8;
 }
 
 .guilds {
   cursor: crosshair;
   display: none;
-  //position: absolute;
-  //left: 0px;
   z-index:8;
 }
 
 .districts {
   display: none;
-  position: absolute;
-  left: -1px;
   z-index:4;
 }
 
