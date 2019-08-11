@@ -231,6 +231,7 @@ a:hover {
   background-color: #000000;
   opacity: 0.5;
   display: none;
+  overflow-x: hidden;
 }
 
 #overlay2 {
@@ -240,6 +241,7 @@ a:hover {
   background-color: #000000;
   opacity: 0.5;
   display: none;
+  overflow-x: hidden;
 }
 
 #overlay3 {
@@ -249,6 +251,7 @@ a:hover {
   background-color: #000000;
   opacity: 0.5;
   display: none;
+  overflow-x: hidden;
 }
 
 #overlay4 {
@@ -259,6 +262,7 @@ a:hover {
   background-color: #000000;
   opacity: 0.5;
   display: none;
+  overflow-x: hidden;
 }
 
 #tooltip {
