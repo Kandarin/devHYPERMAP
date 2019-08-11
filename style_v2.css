@@ -376,6 +376,7 @@ a:hover {
 }
 
 .markerUIbuttonGreen {
+  display: none;
   order: 2;
   align-self: flex-end;
   padding: 2px;
