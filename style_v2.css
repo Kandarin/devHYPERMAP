@@ -95,6 +95,7 @@ body {
 
 #sidebarMarkerlist {
   display: flex;
+  flex-direction: column;
   max-width: 400px;
   z-index: 7;
   background-color: #000000;
