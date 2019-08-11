@@ -235,7 +235,6 @@ a:hover {
 
 #overlay2 {
   position: absolute;
-  width: 1008px;
   height: 1008px;
   z-index: 7;
   background-color: #000000;
@@ -245,7 +244,6 @@ a:hover {
 
 #overlay3 {
   position: absolute;
-  width: 1008px;
   height: 1008px;
   z-index: 7;
   background-color: #000000;
