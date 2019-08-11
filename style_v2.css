@@ -384,7 +384,9 @@ a:hover {
   padding: 2px;
   margin-left: 10px;
   border: 1px solid #00ff00;
-  background-color: #003300;x
+  background-color: #003300;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 @media only screen
