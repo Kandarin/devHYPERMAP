@@ -97,7 +97,7 @@ function toggleMarker(x,y,z) {
 	var index = encodeLocation(x,y,z);
 	markers[index] = !markers[index];
 	if (markers[index]) {
-		document.getElementById("sidebarMarkerlist").innerHTML += "<div class='markerinfo' id=" + "markerinfo" + index + "><div class='markerLocationText'>" + getLocationString(x,y,z) + "</div><div class='markerUIbuttonRed' id='" + "markerButtonDelete" + index + "' onclick='toggleMarker(" + x + "," + y + "," + z + ")'>delete</div><div class='markerUIbuttonBlue' id='" + "markerButtonStart" + index + "' onclick='setStart(" + x + "," + y + "," + z + ")'>set as start</div><div class='markerUIbuttonGreen' id='" + "markerButtonDestination" + index + "' onclick='setDestination(" + x + "," + y + "," + z + ")'>>&nbsp;plot path here</div></div>";
+		document.getElementById("sidebarMarkerlist").innerHTML += "<div class='markerinfo' id=" + "markerinfo" + index + "><div class='markerLocationText'>" + getLocationString(x,y,z) + "</div><div class='markerUIbuttonRed' id='" + "markerButtonDelete" + index + "' onclick='toggleMarker(" + x + "," + y + "," + z + ")'>delete</div><div class='markerUIbuttonBlue' id='" + "markerButtonStart" + index + "' onclick='setStart(" + x + "," + y + "," + z + ")'>start</div><div class='markerUIbuttonGreen' id='" + "markerButtonDestination" + index + "' onclick='setDestination(" + x + "," + y + "," + z + ")'>>&nbsp;plot path here</div></div>";
 		document.getElementById("content").innerHTML += "<div class='marker' id=" + "markerpoint" + index + " style='top: " + (y*24) + "; left: " + (x*24) + ";'></div>";
 	} else {
 		var markerPoint = document.getElementById("markerpoint" + index);

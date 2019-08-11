@@ -27,6 +27,7 @@ body {
 .topbar {
   order: 1;
   height: 35px;
+  display: flex;
   align-items: flex-start;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -84,7 +85,7 @@ body {
 
 .sidebar {
   order: 2;
-  max-width: 400px;
+  max-width: 600px;
   align-self: flex-start;
   display: inline-flex;
   flex-direction: column;
