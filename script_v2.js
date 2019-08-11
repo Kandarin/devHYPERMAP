@@ -6593,6 +6593,7 @@ function initializeTileNames() {
 	registerTileNames(11,20,2,"Frozen Wastes");
 	registerTileNames(11,21,2,"Frozen Wastes");
 	registerTileNames(10,20,2,"Egg Field");
+	registerTileNames(17,14,2,"Frozen Wastes");
 
 	    // Warrens Tile Names
 	registerTileNames(1,1,4,"The Great Wyrm's Lair");
@@ -11986,6 +11987,7 @@ function initializeTileTypes() {
 	registerTileTypes(11,20,2,"a Frozen Wastes");
 	registerTileTypes(11,21,2,"a Frozen Wastes");
 	registerTileTypes(10,20,2,"an Egg Field");
+	registerTileTypes(17,14,2,"a Frozen Wastes");
 	// Warrens Tile Types
 	registerTileTypes(1,1,4,"a Shiva Furnace");
 	registerTileTypes(1,2,4,"x");
