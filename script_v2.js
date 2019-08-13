@@ -643,8 +643,8 @@ function getMouseClick(e) {
 	} else if (touchMode) {
 		if (isPortal()) {
 			if (!touchmodeFixLocation) {
-				updateTooltip("in");
 				touchmodeFixLocation = true;
+				updateTooltip("in");
 			}
 		}
 	}
