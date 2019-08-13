@@ -21,6 +21,8 @@ body {
 .page {
   height: 100%;
   width: 1600px;
+  display: flex;
+  flex-direction: column;
 }
 
 .topbar {
