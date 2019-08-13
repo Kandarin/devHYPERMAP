@@ -606,6 +606,7 @@ function validLocation(x,y,z) {
 
 function enterPortal() {
 	touchmodeFixLocation = false;
+	touchPortalClick = false;
 	if (portalTargetZ > -1) {
 		if (portalTargetZ != Z) {
 			showPlane(portalTargetZ);
@@ -628,6 +629,7 @@ function cyclePortals() {
 
 function cancelPortalTouch() {
 	touchmodeFixLocation = false;
+	touchPortalClick = false;
 }
 
 function getMouseClick(e) {
@@ -636,7 +638,6 @@ function getMouseClick(e) {
 		updateTooltip("in");
 	}
 	getMousePosition(e);
-	console.log(e);
 	if (setMarkers) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	} else if (!touchMode) {
