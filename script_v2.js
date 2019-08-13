@@ -10,7 +10,7 @@ var hasTouch;
 var hasMouse;
 var whitepointer = "&#9655;<font color='#aaaaaa'>";
 var blackpointer = "&#9654;<font color='#ffffff'>";
-var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false;
+var showTools = false; var showBadges = false; var showGuilds = false; var showDistricts = false; var showDescriptions = true; var setMarkers = false; var touchMode = false; var suppressTT = false; var touchPortalClick = false;
 
 var waterCostModifier = 2.0;
 var portalMPCostModifier = 0.01;
@@ -631,7 +631,12 @@ function cancelPortalTouch() {
 }
 
 function getMouseClick(e) {
+	if (touchPortalClick) {
+		touchmodeFixLocation = true;
+		updateTooltip("in");
+	}
 	getMousePosition(e);
+	console.log(e);
 	if (setMarkers) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	} else if (!touchMode) {
@@ -697,6 +702,10 @@ function getMousePosition(e) {
 	Y = parseInt((_y+30) / 24);
 	if (setMarkers && hasTouch) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
+	}
+	if (hasTouch && isPortal()) {
+		touchPortalClick = !touchPortalClick;
+		getMouseClick(e);
 	}
 	document.getElementById("tooltip").style.left = _x + 12;
 	document.getElementById("tooltip").style.top = _y + 0;
