@@ -76,6 +76,8 @@ if (matchMedia('(pointer:fine)').matches) {
     hasMouse = true;
 }
 
+if (hasTouch) toggleTouchscreenMode();
+
 initializePortals();
 initializeTileNames();
 initializeTileTypes();
