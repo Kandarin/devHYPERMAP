@@ -656,51 +656,17 @@ function getMouseClick(e) {
 	}
 }
 
-function recursive_offset(aobj) {
-	var currOffset = {
-  	x: 0,
-  	y: 0
- 	}
-	var newOffset = {
-     x: 0,
-     y: 0
- 	}
- 	if (aobj !== null) {
-   	if (aobj.scrollLeft) {
-     	currOffset.x = aobj.scrollLeft;
-   	}
-   	if (aobj.scrollTop) {
-     	currOffset.y = aobj.scrollTop;
-   	}
-   	if (aobj.offsetLeft) {
-     	currOffset.x -= aobj.offsetLeft;
-   	}
-   	if (aobj.offsetTop) {
-     	currOffset.y -= aobj.offsetTop;
-   	}
-   	if (aobj.parentNode !== undefined) {
-      	newOffset = recursive_offset(aobj.parentNode);
-   	}
-   	currOffset.x = currOffset.x + newOffset.x;
-   	currOffset.y = currOffset.y + newOffset.y;
- 	}
- 	return currOffset;
-}
-
 function getMousePosition(e) {
 	if (touchmodeFixLocation) return;
-	var offsetpos = recursive_offset(document.getElementById("content"));
-  posX = event.clientX+offsetpos.x;
-  posY = event.clientY+offsetpos.y;
+	var canvas = document.getElementById('content');
+  var rect = canvas.getBoundingClientRect();
+  var mouseX = e.clientX - rect.left;
+  var mouseY = e.clientY - rect.top;
 	document.getElementById("signal").style.left = -50;
 	document.getElementById("signal").style.top = -50;
-	var _x;
-	var _y;
 	var tooltipContent = "";
-	_x = posX;
-	_y = posY;
-	X = parseInt((_x-0) / 24);
-	Y = parseInt((_y+30) / 24);
+	X = parseInt((mouseX - 0) / 24);
+	Y = parseInt((mouseY + 0) / 24);
 	if (setMarkers && hasTouch) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	}
@@ -708,8 +674,8 @@ function getMousePosition(e) {
 		touchPortalClick = !touchPortalClick;
 		getMouseClick(e);
 	}
-	document.getElementById("tooltip").style.left = _x + 12;
-	document.getElementById("tooltip").style.top = _y + 0;
+	document.getElementById("tooltip").style.left = mouseX + 24;
+	document.getElementById("tooltip").style.top = mouseY - 24;
 	if (Y > 0) {
 		document.getElementById("pointer").style.left = X*24 - 24;
 		document.getElementById("pointer").style.top = Y*24 - 24;

@@ -33,6 +33,7 @@ body {
   align-items: flex-start;
   flex-direction: row;
   cursor: default;
+  flex: 0 0 auto;
 }
 
 .maplink {
