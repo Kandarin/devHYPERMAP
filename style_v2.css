@@ -39,7 +39,7 @@ body {
 .maplink {
   cursor: pointer;
   height: 20;
-  display: inline-flex;
+  display: block;
   align-self: flex-start;
   border-style: solid;
   border-width: 1px;
