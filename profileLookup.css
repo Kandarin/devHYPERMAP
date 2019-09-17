@@ -267,7 +267,27 @@ body {
   order: 2;
   width: 80%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
   color: #FFC611;
+}
+
+p {
+  display: inline-block;
+}
+
+#badgeButton {
+  cursor: pointer;
+  border-style: solid;
+  width: fit-content;
+  border-width: 1px;
+  border-radius: 3px;
+  margin-top: 100px;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  text-align: center;
+  background-color: #000000;
+  color: #ffff00;
 }
 
 #statTitle {
