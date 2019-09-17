@@ -245,6 +245,7 @@ body {
 
 #charPosition {
   padding-right: 2px;
+  min-width: 50px;
 }
 
 #charFaction {
