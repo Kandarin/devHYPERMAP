@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #0D0221;
+  width: 900px;
 }
 
 .staticBar {
@@ -86,7 +87,6 @@ body {
   border-width: 5px;
   display: inline-flex;
   flex-direction: row;
-  width: 900PX;
   margin-top: 5px;
   margin-bottom: 5px;
 }
