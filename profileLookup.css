@@ -2,7 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #0D0221;
-  width: 900px;
+  width: 800px;
 }
 
 .staticBar {
@@ -85,7 +85,7 @@ body {
   border-color: #F706CF;
   border-style: inset;
   border-width: 5px;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -95,7 +95,6 @@ body {
   order: 3;
   display: inline-flex;
   flex-direction: column;
-  padding: 5px;
   margin-bottom: 5px;
   margin-top: 5px;
   color: #FFFFFF;
@@ -191,13 +190,13 @@ body {
 #charInfo1 {
   order: 1;
   padding: 15px;
-  width: 75%;
+  width: 60%;
 }
 
 #charInfo2{
   order: 2;
   padding: 15px;
-  width: 25%;
+  width: 32%;
 }
 
 .left {
@@ -244,7 +243,6 @@ body {
 
 #charPosition {
   padding-right: 2px;
-  min-width: 50px;
 }
 
 #charFaction {

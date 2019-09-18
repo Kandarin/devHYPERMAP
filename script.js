@@ -93,20 +93,17 @@ if (localStorage.getItem("expBadges")) {
 	var finishedBadgeList;
 	var lookupBadges = localStorage.getItem("expBadges");
 	lookupBadges = lookupBadges.toLowerCase();
-	console.log('there is badge information here');
 	if (!showBadges) toggleBadges();
 	checkBadges(lookupBadges);
 	showhideMarkersPlanechange();
 	localStorage.clear();
-} else {
-	console.log('no local storage badges found.....');
 }
 
 function loadToolsPane() {
 	showTools = !showTools;
 	if (showTools) {
 		document.getElementById("toolsButton").innerHTML = "Tools: ON";
-		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for. First is a tool I wrote for looking up profiles by name, it utilizes the existing profile lookup API, the second is a slightly updated character planner, some typos are fixed and the buttons have been moved so as to not change position with the table. I did not write the planner, only modified the existing one.<br><br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/devHYPERMAP/issues>HERE</a><br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b4_v2_2.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
+		document.getElementById("infoText").innerHTML = "<br>Here are a couple of handy things I thought would be nice to have links for. First is a tool I wrote for looking up profiles by name, it utilizes the existing profile lookup API, the second is a slightly updated character planner, some typos are fixed and the buttons have been moved so as to not change position with the table. I did not write the planner, only modified the existing one.<br><br>Please report bugs or inaccuracies: <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a><br><br><a href=profileLookup.html>Nexus Clash Profile Lookup Tool</a><br><a href=chargen_b4_v2_2.html>Updated Character Planner</a><br><br><div id='portalInstructions'>Click to enter portals, Shift-click to cycle through destinations.</div>";
 	} else {
 		document.getElementById("toolsButton").innerHTML = "Tools: OFF";
 		document.getElementById("infoText").innerHTML = origSidebar;
@@ -514,11 +511,13 @@ function toggleBadges(switchPlane) {
 	}
 	if (!switchPlane) showBadges = !showBadges;
 	if (showBadges && showGuilds) toggleGuilds();
-	console.log(showBadges);
 	if(showBadges) {
 		document.getElementById("overlay2").style.display = "block";
 		if (Z == 0) {
 			document.getElementById("badges0").style.display = "block";
+			document.getElementById("badges1").style.display = "none";
+			document.getElementById("badges2").style.display = "none";
+			document.getElementById("badges3").style.display = "none";
 			document.getElementById("overlay2").style.width = "1008";
 		}
 		else if (Z == 1) {

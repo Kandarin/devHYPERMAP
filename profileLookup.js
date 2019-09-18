@@ -96,7 +96,7 @@ async function lookup() {
     document.getElementById('charFaction').innerHTML = jsonData.result.character.faction.name;
   }
 
-  document.getElementById('charInfo2').innerHTML = "<img src='" + jsonData.result.character.avatar.url + "'>";
+  document.getElementById('charInfo2').innerHTML = "<img src='" + jsonData.result.character.avatar.url + "' height='250' width='250'>";
   document.getElementById('physDescription').innerHTML = jsonData.result.character.description.physical;
   document.getElementById('personalDescription').innerHTML = jsonData.result.character.description.personal;
   await badgeParse(jsonData.result.character.badges, nameName);
@@ -317,7 +317,9 @@ async function badgeParse(badges, name) {
   document.getElementById('charTargets').innerHTML = badgeNumNorm[targetsMax];
 
   if (exploreBadges.length == 0) {
-    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find";
+    document.getElementById('exploreBadges').innerHTML = name + " has not found any exploration badges yet<p> 40 badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a>";
+  } else if (exploreBadges.length == 40) {
+    document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p> All exploration badges obtained.";
   } else {
     badgesLeft = 40 - exploreBadges.length;
     document.getElementById('exploreBadges').innerHTML = "Exploration Badges obtained: <p>" + exploreBadges + "<p>" + badgesLeft + " badges left to find <a class='charExpBadges' id='badgeButton' onClick='badgeLink()' href=hypermap.html> Set Hypermap to Missing Badges </a>";
