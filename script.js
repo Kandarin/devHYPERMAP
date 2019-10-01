@@ -27,7 +27,7 @@ var guildsInitialized = false;
 var badgesInitialized = false;
 var X = 0; var Y = 0; var Z = 0; var portalToggle = 0;
 var TestX = 0;
-var TestX = 0
+var TestY = 0;
 var portalTargetX = 0; portalTargetY = 0; portalTargetZ = 0; portalTargetW = 0;
 var pathStartX = 0; pathStartY = 0; pathStartZ = 0;
 var pathDestinationX = 0; pathDestinationY = 0; pathDestinationZ = 0;
