@@ -751,7 +751,7 @@ function getTouchmodeTooltipControls() {
 }
 
 function updateTooltip(state) {
-	var tooltipContent = "<div id='tooltiptext'>";
+	var tooltipContent = "<div id='tooltiptext' aria-live='assertive'>";
 	tooltipContent += getLocationString(X,Y,Z) + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 
 	if (state == "out") {
