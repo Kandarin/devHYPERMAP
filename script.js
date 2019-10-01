@@ -709,10 +709,6 @@ function getMouseClick(e) {
 }
 
 function getMousePosition(e) {
-	if (TestX == X && TestY == Y) {
-		console.log('no change');
-		return;
-	}
 	if (touchmodeFixLocation) return;
 	var canvas = document.getElementById('content');
   var rect = canvas.getBoundingClientRect();
@@ -723,6 +719,10 @@ function getMousePosition(e) {
 	var tooltipContent = "";
 	X = parseInt((mouseX - 0) / 24);
 	Y = parseInt((mouseY + 0) / 24);
+	if (TestX == X && TestY == Y) {
+		console.log('no change');
+		return;
+	}
 	if (setMarkers && hasTouch) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	}
