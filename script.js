@@ -26,6 +26,8 @@ var touchmodeFixLocation = false;
 var guildsInitialized = false;
 var badgesInitialized = false;
 var X = 0; var Y = 0; var Z = 0; var portalToggle = 0;
+var TestX = 0;
+var TestX = 0
 var portalTargetX = 0; portalTargetY = 0; portalTargetZ = 0; portalTargetW = 0;
 var pathStartX = 0; pathStartY = 0; pathStartZ = 0;
 var pathDestinationX = 0; pathDestinationY = 0; pathDestinationZ = 0;
@@ -707,6 +709,10 @@ function getMouseClick(e) {
 }
 
 function getMousePosition(e) {
+	if (TestX == X && TestY == Y) {
+		console.log('no change');
+		return;
+	}
 	if (touchmodeFixLocation) return;
 	var canvas = document.getElementById('content');
   var rect = canvas.getBoundingClientRect();
@@ -715,15 +721,8 @@ function getMousePosition(e) {
 	document.getElementById("signal").style.left = -50;
 	document.getElementById("signal").style.top = -50;
 	var tooltipContent = "";
-	var testX = X;
-	var testY = Y;
 	X = parseInt((mouseX - 0) / 24);
 	Y = parseInt((mouseY + 0) / 24);
-	console.log('after: ' + testX);
-	console.log('after: ' + X);
-	if (testX == X && testY == Y) {
-		return;
-	}
 	if (setMarkers && hasTouch) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	}
@@ -758,6 +757,8 @@ function getTouchmodeTooltipControls() {
 }
 
 function updateTooltip(state) {
+	TestX = X;
+	TestY = Y;
 	console.log("updating");
 	var tooltipContent = "<div id='tooltiptext'>";
 	tooltipContent += getLocationString(X,Y,Z) + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
