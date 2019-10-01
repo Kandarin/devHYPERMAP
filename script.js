@@ -715,8 +715,6 @@ function getMousePosition(e) {
 	document.getElementById("signal").style.left = -50;
 	document.getElementById("signal").style.top = -50;
 	var tooltipContent = "";
-	console.log('before: ' + testX);
-	console.log('before: ' + X);
 	var testX = X;
 	var testY = Y;
 	X = parseInt((mouseX - 0) / 24);
