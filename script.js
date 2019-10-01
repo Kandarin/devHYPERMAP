@@ -760,7 +760,7 @@ function updateTooltip(state) {
 	TestX = X;
 	TestY = Y;
 	console.log("updating");
-	var tooltipContent = "<div id='tooltiptext' aria-live="polite">";
+	var tooltipContent = "<div id='tooltiptext' aria-live='polite'>";
 	tooltipContent += getLocationString(X,Y,Z) + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 
 	if (state == "out") {
