@@ -715,8 +715,17 @@ function getMousePosition(e) {
 	document.getElementById("signal").style.left = -50;
 	document.getElementById("signal").style.top = -50;
 	var tooltipContent = "";
+	console.log('before: ' + testX);
+	console.log('before: ' + X);
+	var testX = X;
+	var testY = Y;
 	X = parseInt((mouseX - 0) / 24);
 	Y = parseInt((mouseY + 0) / 24);
+	console.log('after: ' + testX);
+	console.log('after: ' + X);
+	if (testX == X && testY == Y) {
+		return;
+	}
 	if (setMarkers && hasTouch) {
 		if (xyzValid()) toggleMarker(X,Y,Z);
 	}
