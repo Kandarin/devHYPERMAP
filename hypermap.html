@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- Nexus Clash Breath 4 Hypermap version 2.0-->
+<!-- Nexus Clash Breath 4 Hypermap version 2.1-->
 <!-- html rewite by plscks to be mobile friendly, iOS and Android -->
 <!-- Let's see if we can get this thing to make any sort of sense -->
 <html>
@@ -23,6 +23,7 @@
       <div class="maplink" id="guildsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleGuilds()"> Guilds: OFF </div>
       <div class="maplink" id="markerModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleMarkerMode()"> Set/Remove Markers: OFF</div>
       <div class="maplink" id="mobileModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleTouchscreenMode()"> Touchscreen Mode: OFF</div>
+      <div class="maplink" id="keyboardModeButton" style="border-color:#FFFFFF; background-color:#000000" onclick="toggleKeyboardMode()"> Keyboard Mode: OFF</div>
       <div class="maplink" id="toolsButton" style="border-color:#FFFFFF; background-color:#000000" onclick="loadToolsPane()"> Tools: OFF</div>
       <div class="maplink" id="backButton" style="border-color:#FFFFFF; background-color:#000000"><a href="http://www.nexusclash.com/modules.php?name=Game">Back to game</a></div>
     </div>
@@ -56,10 +57,12 @@
         <div id="overlay">&nbsp;</div>
         <div id="overlay2">&nbsp;</div>
         <div id="overlay3">&nbsp;</div>
-        <div id="tooltip" aria-live="assertive"></div>
+        <div id="tooltip"></div>
       </div>
       <div class="sidebar">
-        <span id="infoText">
+        <span id="infoText" aria-live="assertive">
+        <br>Press K to toggle keyboard control mode.
+        <br>
         <br>Updated and maintained by plscks (2019).<br>Please report bugs <a href=https://github.com/plscks/testHYPERMAP/issues>HERE</a>.<br><br>Updated from the <a href=https://www.nexusclash.com/hypermap/>official hypermap</a> by Thalanor a.k.a. Esrahil. This is very much so a work in progress, many thanks to Azure, catvom, and the community for the updated google sheets maps.<br><br>Set at least two markers to calculate a shortest route between them, OR set at least one marker to find the closest building of a type.
         <div id="portalInstructions">Click to enter portals, Shift-click to cycle through destinations.</div>
         </span>
