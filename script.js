@@ -725,7 +725,8 @@ function updateTooltipKeyMode(state) {
 		console.log('id');
 		tooltipContent += getLocationString(X,Y,Z,'id') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 	} else {
-		tooltipContent += getLocationString(X,Y,Z,'normal') + portalsString() + "</div>";
+		//tooltipContent += getLocationString(X,Y,Z,'normal') + portalsString() + "</div>";
+		tooltipContent += getLocationString(X,Y,Z,'id') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 	}
 	if (state == "out") {
 		document.getElementById("tooltip").style.display = "none";
