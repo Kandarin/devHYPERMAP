@@ -2654,19 +2654,23 @@ function levelup()
 {
 	if (level[level.length - 1] == levelskill.length)
 	{
-		levelskill.push("hidden");
-		levels.push("-- Saved --");
-		levelcp.push("0");
-		addLine(0, "-- Saved --");
+		if (level.length >= 30) {
+			return;
+		} else {
+			levelskill.push("hidden");
+			levels.push("-- Saved --");
+			levelcp.push("0");
+			addLine(0, "-- Saved --");
+		}
 	}
 	banked = document.getElementById("bankedcp").innerHTML - 0 + cplevel[level.length];
 	document.getElementById("bankedcp").innerHTML = banked;
-
 	level.push(levelskill.length);
 	document.getElementById("currentlevel").innerHTML = level.length;
 	if (level.length >= 30)
 	{
 		document.getElementById("level").disabled = true;
+		return;
 	}
 	if (level.length >= 10) {
 		HP = HP + 1;
