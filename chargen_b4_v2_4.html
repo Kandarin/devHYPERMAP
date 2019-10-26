@@ -4076,8 +4076,9 @@ function generateNew() {
 	genW = window.open('#','generate','width=640,height=480,scrollbars=1');
 	genW.document.write("Planned Skill Purchases:<br><ul>");
 	for (i=0;i<levelskill.length; i++) {
-		if (levels[i] == '-- Saved --') { ... }
-		else { genW.document.write("<li>" + levels[i] + "</li>"); }
+		if (levels[i] != '-- Saved --') {
+			genW.document.write("<li>" + levels[i] + "</li>");
+		}
 	}
 	genW.document.write("</ul><br><hr><br>CP left over:    " + document.getElementById("bankedcp").innerHTML);
 }
