@@ -2492,7 +2492,6 @@ function updateCPTable()
 {
 	var T2CPRemaining = (70 - T2_70CP) > 0 ? (70 - T2_70CP) : 0;
 	var T3CPRemaining = (250 - T3_250CP) > 0 ? (250 - T3_250CP) : 0;
-	document.getElementById("bankedcpDesc").innerHTML = " CP banked";
 	document.getElementById("bankedcp").innerHTML = banked;
 	document.getElementById("spentcp").innerHTML = CPSpent;
 	document.getElementById("tier2reqcp").innerHTML = T2CPRemaining;
@@ -2666,7 +2665,6 @@ function levelup()
 		}
 	}
 	banked = document.getElementById("bankedcp").innerHTML - 0 + cplevel[level.length];
-	document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 	document.getElementById("bankedcp").innerHTML = banked;
 	level.push(levelskill.length);
 	document.getElementById("currentlevel").innerHTML = '<b>Current Level</b> : ' + level.length;
@@ -4105,7 +4103,6 @@ function exploreBadge()
 		addLine(-1 * document.getElementById("exp02").value, document.getElementById("exp02").value + " Exploration Badges");
 		document.getElementById("exp00").value = document.getElementById("exp00").value - document.getElementById("exp02").value;
 		banked = 1 * document.getElementById("bankedcp").innerHTML + 1 * document.getElementById("exp02").value;
-		document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 		document.getElementById("bankedcp").innerHTML = banked;
 
 	}
@@ -4137,7 +4134,6 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("lifetime_ach_bad1").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("lifetime_ach_bad1").value + " Accomplished");
 				badge = document.getElementById("lifetime_ach_bad1").value;
@@ -4156,7 +4152,6 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("breath_ach_bad1").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("breath_ach_bad1").value + " Accomplished");
 
@@ -4179,7 +4174,6 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("lifetime_ach_bad2").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("lifetime_ach_bad2").value + " Accomplished");
 				document.getElementById("lifetime_ach_bad2").removeChild(document.getElementById("lifetime_ach_bad2").options[document.getElementById("lifetime_ach_bad2").selectedIndex]);
@@ -4193,7 +4187,6 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("breath_ach_bad2").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("breath_ach_bad2").value + " Accomplished");
 				document.getElementById("breath_ach_bad2").removeChild(document.getElementById("breath_ach_bad2").options[document.getElementById("breath_ach_bad2").selectedIndex]);
@@ -5351,11 +5344,11 @@ function addLine(CP, text)
 </div>
 </div>
 <div id="build">
-<div id="level_plan" aria-live="assertive"><span id="currentlevel"><b>Current Level</b> : 1 </span>
+<div id="level_plan"><span id="currentlevel" aria-live="assertive"><b>Current Level</b> : 1 </span>
  <br>
-<table class="tableCP">
+<table class="tableCP" aria-live="assertive">
 	<tbody>
-		<tr><td class="tdstats" id="bankedcptitle">CP banked:</td><td id="bankedcp">10<span id="bankedcpDesc"> CP banked</span></td></tr>
+		<tr><td class="tdstats" id="bankedcptitle">CP banked:</td><td id="bankedcp">10</td></tr>
 		<tr><td class="tdstats">CP spent:</td><td id="spentcp">0</td></tr>
 		<tr><td class="tdstats">CP spend required before Tier 2:</td><td id="tier2reqcp">70</td></tr>
 		<tr><td class="tdstats">CP spend required before Tier 3:</td><td id="tier3reqcp">250</td></tr>
