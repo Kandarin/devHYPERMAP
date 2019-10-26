@@ -258,6 +258,7 @@ document.onkeydown = getKeyPress;
 function getKeyPress(e) {
 	if (e.key == '+') levelup();
 	if (e.key == '-') delevel();
+	if (e.key == 'p') generateNew();
 }
 var levels = Array(); levelcp = Array(); levelskill = Array(); level = Array();
 var cplevel = Array(10,10,10,10,10,10,10,10,10,20,20,20,20,20,20,20,20,20,20,30,30,30,30,30,30,30,30,30,30,30);
@@ -2491,7 +2492,7 @@ function updateCPTable()
 {
 	var T2CPRemaining = (70 - T2_70CP) > 0 ? (70 - T2_70CP) : 0;
 	var T3CPRemaining = (250 - T3_250CP) > 0 ? (250 - T3_250CP) : 0;
-	document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+	document.getElementById("bankedcpDesc").innerHTML = " CP banked";
 	document.getElementById("bankedcp").innerHTML = banked;
 	document.getElementById("spentcp").innerHTML = CPSpent;
 	document.getElementById("tier2reqcp").innerHTML = T2CPRemaining;
@@ -2665,7 +2666,7 @@ function levelup()
 		}
 	}
 	banked = document.getElementById("bankedcp").innerHTML - 0 + cplevel[level.length];
-	document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+	document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 	document.getElementById("bankedcp").innerHTML = banked;
 	level.push(levelskill.length);
 	document.getElementById("currentlevel").innerHTML = '<b>Current Level</b> : ' + level.length;
@@ -4073,6 +4074,15 @@ function delevel()
 	}
 }
 
+function generateNew() {
+	genW = window.open('#','generate','width=640,height=480,scrollbars=1');
+	genW.document.write("Planned Skill Purchases:<br><ul>");
+	for (i=0;i<levelskill.length; i++) {
+		genW.document.write("<li>" + document.getElementById("level_table").rows[i+1].cells[0].innerHTML + "</li>");
+	}
+	genW.document.write("</ul><br><hr><br>CP left over:    " + document.getElementById("bankedcp").innerHTML);
+}
+
 function generate()
 {
 	genW = window.open('#','generate','width=640,height=480,scrollbars=1');
@@ -4095,7 +4105,7 @@ function exploreBadge()
 		addLine(-1 * document.getElementById("exp02").value, document.getElementById("exp02").value + " Exploration Badges");
 		document.getElementById("exp00").value = document.getElementById("exp00").value - document.getElementById("exp02").value;
 		banked = 1 * document.getElementById("bankedcp").innerHTML + 1 * document.getElementById("exp02").value;
-		document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+		document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 		document.getElementById("bankedcp").innerHTML = banked;
 
 	}
@@ -4127,7 +4137,7 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("lifetime_ach_bad1").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("lifetime_ach_bad1").value + " Accomplished");
 				badge = document.getElementById("lifetime_ach_bad1").value;
@@ -4146,7 +4156,7 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("breath_ach_bad1").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("breath_ach_bad1").value + " Accomplished");
 
@@ -4169,7 +4179,7 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("lifetime_ach_bad2").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("lifetime_ach_bad2").value + " Accomplished");
 				document.getElementById("lifetime_ach_bad2").removeChild(document.getElementById("lifetime_ach_bad2").options[document.getElementById("lifetime_ach_bad2").selectedIndex]);
@@ -4183,7 +4193,7 @@ function achieveBadge(CP, lifetime)
 				levels.push(document.getElementById("breath_ach_bad2").value);
 				levelcp.push(-CP);
 				banked = 1 * document.getElementById("bankedcp").innerHTML + CP;
-				document.getElementById("bankedcptitle").innerHTML = "CP banked:";
+				document.getElementById("bankedcpDesc").innerHTML = " CP banked:";
 				document.getElementById("bankedcp").innerHTML = banked;
 				addLine(-CP, document.getElementById("breath_ach_bad2").value + " Accomplished");
 				document.getElementById("breath_ach_bad2").removeChild(document.getElementById("breath_ach_bad2").options[document.getElementById("breath_ach_bad2").selectedIndex]);
@@ -5345,7 +5355,7 @@ function addLine(CP, text)
  <br>
 <table class="tableCP">
 	<tbody>
-		<tr><td class="tdstats" id="bankedcptitle">CP banked:</td><td id="bankedcp">10</td></tr>
+		<tr><td class="tdstats" id="bankedcptitle">CP banked:</td><td id="bankedcp">10<span id="bankedcpDesc"> CP banked</span></td></tr>
 		<tr><td class="tdstats">CP spent:</td><td id="spentcp">0</td></tr>
 		<tr><td class="tdstats">CP spend required before Tier 2:</td><td id="tier2reqcp">70</td></tr>
 		<tr><td class="tdstats">CP spend required before Tier 3:</td><td id="tier3reqcp">250</td></tr>
@@ -5353,7 +5363,7 @@ function addLine(CP, text)
 </table>
 <input value="Level" id="level" onclick="levelup()" disabled="disabled" type="button"> <input value="Delevel" id="delevel" onclick="delevel()" disabled="disabled" type="button">
 <hr>
-<input value="Generate" id="generate" onclick="generate()" type="button"><input value="Back to Hypermap" id="back" onclick=window.location.href="hypermap.html" type="button">
+<input value="Generate" id="generate" onclick="generateNew()" type="button"><input value="Back to Hypermap" id="back" onclick=window.location.href="hypermap.html" type="button">
 <table id="level_table">
 	<tbody><tr>
 		<th>Lv</th>
