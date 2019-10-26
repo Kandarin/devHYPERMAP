@@ -2666,7 +2666,7 @@ function levelup()
 	banked = document.getElementById("bankedcp").innerHTML - 0 + cplevel[level.length];
 	document.getElementById("bankedcp").innerHTML = banked;
 	level.push(levelskill.length);
-	document.getElementById("currentlevel").innerHTML = level.length;
+	document.getElementById("currentlevel").innerHTML = '<b>Current Level</b> ' + level.length;
 	if (level.length >= 30)
 	{
 		document.getElementById("level").disabled = true;
@@ -4047,7 +4047,7 @@ function delevel()
 		temp = 10;
 	}
 	banked = temp;
-	document.getElementById("currentlevel").innerHTML = level.length;
+	document.getElementById("currentlevel").innerHTML = '<b>Current Level</b> ' + level.length;
 	updateCPTable();
 	updateStatsTable();
 	if (level.length < oldlevel) {
@@ -5334,7 +5334,7 @@ function addLine(CP, text)
 </div>
 </div>
 <div id="build">
-<div id="level_plan" aria-live="assertive"><b>Current Level</b> : <span id="currentlevel">1 </span>
+<div id="level_plan" aria-live="assertive"> : <span id="currentlevel"><b>Current Level</b> 1 </span>
  <br>
 <table class="tableCP">
 	<tbody>
