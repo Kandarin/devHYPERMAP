@@ -256,6 +256,7 @@ h5
 <script>
 document.onkeydown = getKeyPress;
 function getKeyPress(e) {
+	console.log('Key Pressed: ' + e.key);
 	if (e.key == 'alt') e.preventDefault();
 	if (e.key == 's') e.preventDefault();
 	if (e.key == '+') {
