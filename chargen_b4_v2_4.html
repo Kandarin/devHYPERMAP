@@ -2666,6 +2666,7 @@ function updateStatsTable()
 
 function levelup()
 {
+	if (document.getElementById("level").disabled) return;
 	if (level[level.length - 1] == levelskill.length)
 	{
 		if (level.length >= 30) {
