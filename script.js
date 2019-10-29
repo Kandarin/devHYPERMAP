@@ -668,7 +668,8 @@ function getKeyPress(e) {
 		}
 		if (e.key == 'Enter') {
 			e.preventDefault();
-			updateTooltipKeyMode('id');
+			//should add marker
+			//updateTooltipKeyMode('id');
 		}
 	}
 }
@@ -708,7 +709,7 @@ function keyModeMoveSelector(x, y, keyX, keyY) {
 		document.getElementById("pointer").style.left = X*24 - 24;
 		document.getElementById("pointer").style.top = Y*24 - 24;
 	}
-	console.log(xyzValid());
+	console.log("Plane #: " + Z  + "   Tile is valid: " + xyzValid());
 	if (Y < 1 || X < 1) { updateTooltipKeyMode("out"); }
 	else if ((Z == 0 && X > 40) || ( Z == 0 && Y > 40)) {	updateTooltipKeyMode("out"); }
 	else if ((Z == 1 && X > 30) || (Z == 1 && Y > 40)) { updateTooltipKeyMode("out"); }
@@ -724,9 +725,11 @@ function updateTooltipKeyMode(state) {
 	if (state == 'id') {
 		console.log('id');
 		tooltipContent += getLocationString(X,Y,Z,'id') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
+	} else if (!xyzValid()) {
+		tooltipContent += getLocationString(X,Y,Z,'notvalid') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 	} else {
 		//tooltipContent += getLocationString(X,Y,Z,'normal') + portalsString() + "</div>";
-		tooltipContent += getLocationString(X,Y,Z,'id') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
+		tooltipContent += getLocationString(X,Y,Z,'in') + getTouchmodeTooltipControls() + getBadgeString(X,Y,Z) + getGuildString(X,Y,Z) + portalsString() + getDescriptionString(X,Y,Z) + "</div>";
 	}
 	if (state == "out") {
 		document.getElementById("tooltip").style.display = "none";
@@ -1053,6 +1056,8 @@ function getLocationString(x,y,z,display) {
 		return "[" + x + "," + y + "]"
 	} else if (keyMode && display == 'id') {
 		return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
+	} else if (keyMode && display == 'notvalid') {
+		return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>Void</font>" + " <font size='1' color='#dddddd'>(a Void)</font>";
 	} else {
   	return "[" + x + "," + y + "] " + planeName[z] + " <font size='1' color='#dddddd'>" + TileNames[encodeLocation(x,y,z)] + "</font>" + " <font size='1' color='#dddddd'>(" + TileTypes[encodeLocation(x,y,z)] + ")</font>";
   }
