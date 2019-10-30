@@ -983,7 +983,7 @@ function portalsString() {
 			portalTargetZ = decodedTarget[2];
 			pointer = blackpointer;
 		}
-		result += "<br>" + pointer + "&nbsp;" + methodsArray[i] + " to " + getLocationString(decodedTarget[0],decodedTarget[1],decodedTarget[2],'normal') + " " + planeName[decodedTarget[2]]"</font>";
+		result += "<br>" + pointer + "&nbsp;" + methodsArray[i] + " to " + getLocationString(decodedTarget[0],decodedTarget[1],decodedTarget[2],'normal') + " " + planeName[decodedTarget[2]] + "</font>";
 	}
 	return result;
 }
