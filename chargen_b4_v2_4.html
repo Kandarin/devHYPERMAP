@@ -469,7 +469,7 @@ desc["advocate_cos_aff"] = "<h3>Cosmic Affinity</h3>\n<i>Your understanding of m
 desc["advocate_enchant"] = "<h3>Enchant Item</h3>\n<i>You are capable of binding magics into items, weapons and armour making them more powerful and useful.</i>\n<p>This skill allows the character to imbue many items with magical properties. The amount any one item can be enchanted depends on the item itself. This skill requires a great deal of MP and becomes more difficult the more an item has been enchanted. Each type of enchantment requires the Advocate to possess a potion of the correct type and have learned a certain skill or type of spell.</p>\n<b>CP Cost</b>: 30";
 desc["advocate_seal"] = "<h3>Seal Magic</h3>\n<i>You are better at binding magics into items, weapons and armour.</i>\n<p>This skill reduces the MP cost of enchantment by 20% and increases the enchantment duration by 50%. In addition enchanted items carried by the character are not subject to death decay.</p>\n<b>CP Cost</b>: 60";
 desc["advocate_halo"] = "<h3>Intense Halo</h3>\n<i>Your connection to the Word is so great that it's power radiates outwards from your being.</i>\n<p>The character gains a permanent damage aura that deals (level/4 rounded up) points of holy damage to any one who attempts to harm the advocate with melee or hand to hand attacks.</p>\n<b>CP Cost</b>: 30"
-desc["advocate_holy_light"] = "<h3>Word of Holy Light</h3>\n<i>Your affinity with holy magic grants you a special boon.</i>\n<p>This skill gives the Advocate the ability to activate \"Holy Light\" status effect on themselves for 30 status ticks at a cost of 1AP and 7MP. Holy Light grants +1 damage and +10% to hit with archery and hand-to-hand attacks. In addition while under the status the Advocate can spend up to 4MP on each attack granting +5% to hit for each MP spent and changing the damage type to electric.</p>\n<b>CP Cost</b>: 60";
+desc["advocate_holy_light"] = "<h3>Word of Holy Light</h3>\n<i>Your affinity with holy magic grants you a special boon.</i>\n<p>This skill gives the Advocate the ability to activate \"Holy Light\" status effect on themselves for 30 status ticks at a cost of 1AP and 7MP. Holy Light grants +1 damage and +10% to hit with archery and hand-to-hand attacks. In addition while under the status the Advocate can spend up to 4MP on each attack granting +5% to hit for each MP spent and changing the damage type to electric.</p>\n<b>CP Cost</b>: 30";
 desc["advocate_sin_eater"] = "<h3>Sin Eater</h3>\n<i>You are a paragon of virtue and can petition for the redemption of evildoers.</i>\n<p>This skill allows the Advocate to spend 1 AP and 1 Morality to raise the Morality of an Evil character in their location by one point. This skill specifically works on Evil characters and can shepherd them to neutrality. Sin Eater will work on Tier 2 Demons (Pariahs and Defilers) but cannot save Tier 3 Demons.</p>\n<b>CP Cost</b>: 60";
 desc["advocate_heal_aura"] = "<h3>Healing Aura</h3>\n<i>You are capable of generating an aura of regenerative power that will continually heal the good people around you.</i>\n<p>When activated, the aura will heal 1 HP worth of damage to all Good characters per status tick and lasts for 20 status ticks. Activation of the power costs 1 AP and 7 MP, multiple uses will reset the the duration. Multiple Healing Auras will stack.</p>\n<b>CP Cost</b>: 30";
 desc["advocate_inviol"] = "<h3>Inviolate Form</h3>\n<i>You can summon holy magics to protect your physical form.</i>\n<p>This skill grants the advocate the ability to activate Inviolate Form for 3AP and 5MP. For the next 25 status ticks any damage taken by the Advocate is deducted from MP rather than HP. If the Advocate has 0MP he suffers the damage normally. Inviolate Form may not be stacked.</p>\n<b>CP Cost</b>: 30";
@@ -1710,7 +1710,6 @@ function checkSkill(id, which, CP)
 					document.getElementById("advocate_seal").disabled = false;
 					break;
 				case "advocate_halo":
-					document.getElementById("advocate_holy_light").disabled = false;
 					break;
 				case "advocate_wings":
 					document.getElementById("advocate_wing_wrap").disabled = false;
@@ -3246,7 +3245,6 @@ function delevel()
 			document.getElementById("advocate_seal").disabled = true;
 			break;
 		case "advocate_halo":
-			document.getElementById("advocate_holy_light").disabled = true;
 			break;
 		case "advocate_wings":
 			document.getElementById("advocate_wing_wrap").disabled = true;
@@ -4652,7 +4650,7 @@ function addLine(CP, text)
 	</ul>
 	<li onmouseover="describe('advocate_halo');"><input onfocus="describe('advocate_halo');" onchange="checkSkill('advocate_halo','Intense Halo',30);" id="advocate_halo" type="checkbox"> Intense Halo</li>
 	<ul>
-		<li onmouseover="describe('advocate_holy_light');"><input onfocus="describe('advocate_holy_light');" onchange="checkSkill('advocate_holy_light','Word of Holy Light',60);" id="advocate_holy_light" disabled="disabled" type="checkbox"> Word of Holy Light</li>
+		<li onmouseover="describe('advocate_holy_light');"><input onfocus="describe('advocate_holy_light');" onchange="checkSkill('advocate_holy_light','Word of Holy Light',30);" id="advocate_holy_light" disabled="disabled" type="checkbox"> Word of Holy Light</li>
 	</ul>
 	<li onmouseover="describe('advocate_heal_aura');"><input onfocus="describe('advocate_heal_aura');" onchange="checkSkill('advocate_heal_aura','Healing Aura',30);" id="advocate_heal_aura" type="checkbox"> Healing Aura</li>
 	<li onmouseover="describe('advocate_inviol');"><input onfocus="describe('advocate_inviol');" onchange="checkSkill('advocate_inviol','Inviolate Form',30);" id="advocate_inviol" type="checkbox"> Inviolate Form</li>
